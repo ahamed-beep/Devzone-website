@@ -1,16 +1,28 @@
 import React from 'react'
 import Navbar from './Navbar'
+import Testimonials from './Testimonials'
+import Hero from './Herosection'
+import ServicesSection from './OurServices'
+import { ProjectsSection } from './Projects'
+import { Footer } from './Footer'
 
 const Section = () => {
   return (
     <div>
         <Navbar/>
-        <p className='mt-1000' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus voluptate libero id corrupti esse voluptatum iste! Consectetur, similique quisquam, molestias molestiae quia ab quidem distinctio aperiam magnam sapiente quaerat.</p>
+             <div className='mt-20' >
+ <Hero/>
+             </div>
+             <ServicesSection/>
+             <ProjectsSection/>
+         
+        <div className='mt-10' >
+
+      <Testimonials/>
+        </div>
+        <Footer/>
+
+      
     </div>
   )
 }
