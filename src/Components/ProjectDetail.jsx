@@ -1,5 +1,81 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from './Navbar';
+import { Footer } from './Footer';
+
+// --- DATA ---
+const projectData = [
+    {
+        id: "1",
+        title: "Project Alpha: Redefining Corporate Branding",
+        subtitle: "Corporate Branding",
+        date: "2024",
+        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
+        isFeatured: true,
+        client: "Innovate Corp",
+        service: "Branding & Web Design",
+        agency: "Creative Minds",
+        industry: "Technology",
+        challenge: "To redefine Innovate Corp's brand identity and create a compelling online presence that reflects their cutting-edge technology and forward-thinking culture.",
+        approach: "We started with deep-dive workshops with stakeholders to distill the core brand values. Our approach was iterative, combining user research with creative exploration to build a flexible yet consistent brand system and a highly performant website.",
+        process: {
+            strategy: ["Brand Workshops", "Competitive Analysis", "Audience Persona"],
+            uxResearch: ["User Interviews", "Surveys", "Usability Testing"],
+            design: ["Logo & Identity", "Design System", "Responsive Web Design"],
+        },
+        sideProjectImages: [
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+        ]
+    },
+    {
+        id: "2",
+        title: "Project Beta: A HIPAA-Compliant Health Platform",
+        subtitle: "Web Application",
+        date: "2024",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661758351472-52ed02e99496?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        isFeatured: false,
+        client: "HealthTrackr",
+        service: "Full-Stack Development",
+        agency: "In-house",
+        industry: "Healthcare",
+        challenge: "Develop a secure and user-friendly platform for patients to track their medical records and appointments.",
+        approach: "Our team built a robust web application using modern technologies, focusing on data security (HIPAA compliance) and an intuitive interface for users of all ages.",
+        process: {
+            strategy: ["Requirement Gathering", "Technical Specification", "Roadmapping"],
+            uxResearch: ["Patient Journey Mapping", "Accessibility Audits", "Prototype Testing"],
+            design: ["Data Visualization", "Mobile-First UI", "API Design"],
+        },
+        sideProjectImages: [
+            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1573167101669-476636b96cea?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        ]
+    },
+    {
+        id: "3",
+        title: "Project Gamma: Gamifying Sustainable Travel",
+        subtitle: "Mobile App Design",
+        date: "2024",
+        imageUrl: "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=2070&auto=format&fit=crop",
+        isFeatured: false,
+        client: "EcoJourney",
+        service: "UI/UX for Mobile",
+        agency: "Creative Minds",
+        industry: "Travel & Sustainability",
+        challenge: "Design an engaging mobile app that encourages sustainable travel choices by gamifying eco-friendly activities.",
+        approach: "We designed a vibrant and motivating user interface with a strong focus on positive reinforcement, social sharing, and beautiful illustrations to make sustainability fun.",
+        process: {
+            strategy: ["Concept Validation", "Gamification Strategy", "Feature Prioritization"],
+            uxResearch: ["Focus Groups", "A/B Testing", "Behavioral Analysis"],
+            design: ["Illustration System", "Micro-interactions", "iOS & Android Guidelines"],
+        },
+        sideProjectImages: [
+            "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2070&auto=format&fit=crop",
+        ]
+    },
+];
 
 // --- HOOKS ---
 const useScrollAnimation = (threshold = 0.1) => {
@@ -44,17 +120,41 @@ const InfoDetail = ({ label, value, className = "" }) => (
 );
 
 // --- COMPONENT ---
-export const ProjectDetail = ({ project, onBack }) => {
+export const ProjectDetail = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const project = projectData.find(p => p.id === id);
+    
     const [headerRef, getHeaderAnimation] = useScrollAnimation();
     const [imageRef, getImageAnimation] = useScrollAnimation();
     const [contentRef, getContentAnimation] = useScrollAnimation();
     const [processRef, getProcessAnimation] = useScrollAnimation();
     const [sideProjectsRef, getSideProjectsAnimation] = useScrollAnimation();
 
+    // Handle case where project is not found
+    if (!project) {
+        return (
+            <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:py-24">
+                <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:-translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                    </svg>
+                    Back to Projects
+                </button>
+                <div className="text-center">
+                    <h1 className="text-2xl text-white">Project not found</h1>
+                </div>
+            </div>
+        );
+    }
+
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:py-24">
+        <div>
+
+        <Navbar/>
+        <div className="w-full   px-4 py-16 sm:py-24 bg-black text-white ">
             {/* Back Button */}
-            <button onClick={onBack} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group">
+            <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group">
                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:-translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
                 </svg>
@@ -133,6 +233,8 @@ export const ProjectDetail = ({ project, onBack }) => {
                     ))}
                 </div>
             </section>
+        </div>
+        <Footer/>
         </div>
     );
 };

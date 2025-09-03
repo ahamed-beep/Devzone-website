@@ -1,7 +1,15 @@
 "use client"
 
+import Heromobile from "./Mobile-hero"
+
 export default function Hero() {
   return (
+    <div>
+<div className=" block md:hidden" >
+   <Heromobile/> 
+</div>
+      <div className=" hidden md:block" >
+       
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
@@ -48,19 +56,16 @@ export default function Hero() {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-md aspect-square">
               {/* Video Container */}
-              <div className="absolute inset-0 rounded-full overflow-hidden">
+              <div className="absolute inset-0  rounded-full  overflow-hidden">
                 <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                  <source src="/hero-video.mp4" type="video/mp4" />
+                  <source src="/Images/coding.mp4" type="video/mp4" />
                   {/* Fallback gradient if video doesn't load */}
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-700 rounded-full"></div>
+               
                 </video>
               </div>
 
-              {/* Glowing effect around video */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/30 blur-xl scale-110"></div>
-
-              {/* Fallback 3D-like shape if video is not available */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-700 opacity-80 animate-pulse"></div>
+            
+            
             </div>
 
             {/* Floating elements */}
@@ -73,5 +78,7 @@ export default function Hero() {
       {/* Bottom fade effect */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
     </section>
+     </div>  
+    </div>
   )
 }

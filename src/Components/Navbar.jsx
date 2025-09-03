@@ -206,10 +206,11 @@ export default function Navbar() {
     <motion.nav
       className="fixed top-0 w-full z-50"
       initial={{ y: -100 }}
-      animate={{
-        y: 0,
-        backgroundColor: isScrolled ? "rgb(30 58 138)" : "rgba(255, 255, 255, 0)",
-      }}
+        animate={{
+    y: 0,
+    backgroundColor: isScrolled ? "rgb(30 58 138)" : "rgba(255, 255, 255, 0)", // ✅ Transparent at top
+    backdropFilter: isScrolled ? "blur(10px)" : "none", // ✅ optional glass blur effect
+  }}
       transition={{
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
@@ -274,7 +275,7 @@ export default function Navbar() {
                 <motion.button
                   onClick={() => item.hasDropdown && toggleDropdown(item.name)}
                   className={`flex items-center gap-1 transition-colors duration-200 text-sm font-medium whitespace-nowrap ${
-                    isScrolled ? "text-white hover:text-blue-200" : "text-blue-900 hover:text-blue-700"
+                    isScrolled ? "text-white hover:text-blue-200" : "text-white hover:text-blue-700"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -364,7 +365,7 @@ export default function Navbar() {
               className={`border px-4 py-2 rounded-full transition-all duration-200 text-sm font-medium whitespace-nowrap ${
                 isScrolled
                   ? "bg-transparent border-white text-white hover:bg-white hover:text-blue-900"
-                  : "bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                  : "bg-transparent border-white text-white hover:bg-blue-900 hover:text-white"
               }`}
               whileHover={{
                 scale: 1.05,

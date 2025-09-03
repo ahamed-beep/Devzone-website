@@ -10,9 +10,9 @@ const Section = () => {
   return (
     <div>
         <Navbar/>
-             <div className='mt-20' >
+            
  <Hero/>
-             </div>
+            
              <ServicesSection/>
              <ProjectsSection/>
          

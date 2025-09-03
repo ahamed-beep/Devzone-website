@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Menu,
@@ -21,6 +21,15 @@ import {
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
     {
@@ -95,7 +104,11 @@ export default function MobileNavbar() {
   return (
     <>
       {/* Mobile Navbar - Only visible on mobile */}
-      <nav className="md:hidden fixed top-0 w-full bg-blue-900 z-50">
+      <nav
+        className={`md:hidden fixed top-0 w-full z-50 transition-colors duration-300 ${
+          isScrolled ? "bg-blue-900 shadow-md" : "bg-transparent"
+        }`}
+      >
         <div className="flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <div className="flex items-center">

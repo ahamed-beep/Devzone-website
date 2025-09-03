@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // --- DATA ---
 const projectData = [
     {
-        id: "alpha",
+        id: "1",
         title: "Project Alpha: Redefining Corporate Branding",
         subtitle: "Corporate Branding",
         date: "2024",
@@ -27,7 +28,7 @@ const projectData = [
         ]
     },
     {
-        id: "beta",
+        id: "2",
         title: "Project Beta: A HIPAA-Compliant Health Platform",
         subtitle: "Web Application",
         date: "2024",
@@ -50,7 +51,7 @@ const projectData = [
         ]
     },
     {
-        id: "gamma",
+        id: "3",
         title: "Project Gamma: Gamifying Sustainable Travel",
         subtitle: "Mobile App Design",
         date: "2024",
@@ -138,13 +139,19 @@ const ProjectCard = ({ project, onClick }) => {
     );
 };
 
-export const ProjectsSection = ({ onProjectSelect }) => {
+export const ProjectsSection = () => {
+    const navigate = useNavigate();
     const featuredProject = projectData.find(p => p.isFeatured);
     const otherProjects = projectData.filter(p => !p.isFeatured);
     const [sectionRef, getAnimationClass] = useScrollAnimation();
 
+    // Handle project selection and navigate to detail page
+    const handleProjectSelect = (project) => {
+        navigate(`/project/${project.id}`);
+    };
+
     return (
-        <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-4 py-16 sm:py-24">
+        <div ref={sectionRef} className="w-full  px-4 py-16 sm:py-24 bg-black text-white ">
             <div className="text-center mb-16">
                 <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${getAnimationClass()}`}>
                     Our Projects
@@ -157,14 +164,20 @@ export const ProjectsSection = ({ onProjectSelect }) => {
                 <div className="lg:w-1/2">
                     {featuredProject && (
                         <div className="h-[34rem]">
-                            <ProjectCard project={featuredProject} onClick={() => onProjectSelect(featuredProject)} />
+                            <ProjectCard 
+                                project={featuredProject} 
+                                onClick={() => handleProjectSelect(featuredProject)} 
+                            />
                         </div>
                     )}
                 </div>
                 <div className="lg:w-1/2 flex flex-col gap-8">
                     {otherProjects.map((project) => (
                        <div className="h-64" key={project.id}>
-                           <ProjectCard project={project} onClick={() => onProjectSelect(project)} />
+                           <ProjectCard 
+                               project={project} 
+                               onClick={() => handleProjectSelect(project)} 
+                           />
                        </div>
                     ))}
                 </div>

@@ -88,9 +88,9 @@ export default function Testimonials() {
   const secondRow = testimonials.slice(3, 6)
 
   return (
-    <section className="py-16 px-4 overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-foreground mb-4">
+    <section className=" py-10 md:py-16 px-4 overflow-hidden">
+      <div className=" w-full md:max-w-7xl md:mx-auto text-center mb-12">
+        <h2 className=" text-3xl md:text-4xl font-bold text-foreground mb-4">
           Words of praise from others
           <br />
           about our presence.

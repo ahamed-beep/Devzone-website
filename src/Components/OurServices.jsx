@@ -59,15 +59,16 @@ export default function ServicesSection() {
         </div>
 
         <div className="space-y-32">
-          {/* UI/UX Design Section */}
+          {/* Sections */}
+          {/* --- UI/UX Design --- */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div className="lg:order-1">
               <h2 className="text-4xl font-bold text-white mb-4">UI/UX Design</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Seamless, user-centric design that enhances engagement and delivers an intuitive experience.
               </p>
 
-              <div className="space-y-0">
+              <div className="space-y-0 mb-8 lg:mb-0">
                 <AccordionItem
                   title="Wireframing & Prototyping"
                   description="Interactive prototypes and detailed wireframes to visualize and test design concepts before development, ensuring optimal user flow and functionality."
@@ -95,7 +96,7 @@ export default function ServicesSection() {
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:order-2">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yR5SQH9YQ2MU7gOnIwKFcjjNwpfydH.png"
@@ -106,25 +107,15 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          {/* Branding Section */}
+          {/* --- Branding & Identity --- */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="flex justify-center lg:order-1">
-              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/color-palette-design-tools-dRDKdSoKEoPgDx8bBHnOEGccgjyDu1.png"
-                  alt="Branding materials"
-                  className="rounded-lg object-cover h-110 w-full max-w-lg"
-                />
-              </div>
-            </div>
-
             <div className="lg:order-2">
               <h2 className="text-4xl font-bold text-white mb-4">Branding & Identity</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Transform your brand into a powerful identity with strategic branding solutions.
               </p>
 
-              <div className="space-y-0">
+              <div className="space-y-0 mb-8 lg:mb-0">
                 <AccordionItem
                   title="Logo & Visual Identity"
                   description="Creating memorable brand identities with logos, color schemes, and visual guidelines that resonate with your target audience and strengthen brand recognition."
@@ -151,18 +142,28 @@ export default function ServicesSection() {
                 />
               </div>
             </div>
+
+            <div className="flex justify-center lg:order-1">
+              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/color-palette-design-tools-dRDKdSoKEoPgDx8bBHnOEGccgjyDu1.png"
+                  alt="Branding materials"
+                  className="rounded-lg object-cover h-110 w-full max-w-lg"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* App Development Section */}
+          {/* --- App Development --- */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div className="lg:order-1">
               <h2 className="text-4xl font-bold text-white mb-4">App Development</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Native and cross-platform mobile applications that deliver exceptional user experiences and robust
                 functionality.
               </p>
 
-              <div className="space-y-0">
+              <div className="space-y-0 mb-8 lg:mb-0">
                 <AccordionItem
                   title="iOS & Android Development"
                   description="Native mobile app development for iOS and Android platforms, ensuring optimal performance and platform-specific user experience with access to device features."
@@ -190,7 +191,7 @@ export default function ServicesSection() {
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:order-2">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/mobile-app-development-coding-screen-with-smartpho-ytCU1lzFOi7ZRFQU5QwsptOSGbhjoD.png"
@@ -201,25 +202,15 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          {/* Web Development Section */}
+          {/* --- Web Development --- */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="flex justify-center lg:order-1">
-              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/web-development-coding-screen-PDmanjiDvW4LpDfNQUhlQfi2QiuAKw.png"
-                  alt="Web development"
-                  className="rounded-lg object-cover h-110 w-full max-w-lg"
-                />
-              </div>
-            </div>
-
             <div className="lg:order-2">
               <h2 className="text-4xl font-bold text-white mb-4">Website Design & Development</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 High-performance, responsive websites that combine aesthetics with functionality.
               </p>
 
-              <div className="space-y-0">
+              <div className="space-y-0 mb-8 lg:mb-0">
                 <AccordionItem
                   title="Custom Website Design"
                   description="Responsive, high-performance websites tailored to your business goals and brand identity with modern design principles."
@@ -246,10 +237,17 @@ export default function ServicesSection() {
                 />
               </div>
             </div>
-          </div>
 
-          {/* CTA Section */}
-          
+            <div className="flex justify-center lg:order-1">
+              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/web-development-coding-screen-PDmanjiDvW4LpDfNQUhlQfi2QiuAKw.png"
+                  alt="Web development"
+                  className="rounded-lg object-cover h-110 w-full max-w-lg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

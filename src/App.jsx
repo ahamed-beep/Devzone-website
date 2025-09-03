@@ -1,20 +1,18 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './Components/Navbar'
-import Section from './Components/Section'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Section from './Components/Section';
+import { ProjectDetail } from './Components/ProjectDetail';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Section/>} />
-        
-      </Routes>
-
+        <Routes>
+          <Route path='/' element={<Section />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
