@@ -24,7 +24,7 @@ const SocialMediaToggle = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "linkedin.com/company/devzone-software",
+      url: "https://www.linkedin.com/company/devzone-software/?viewAsMember=true",
       color: "bg-blue-600 hover:bg-blue-700",
     },
     {
