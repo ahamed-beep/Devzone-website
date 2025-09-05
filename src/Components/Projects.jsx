@@ -151,7 +151,7 @@ export const ProjectsSection = () => {
     };
 
     return (
-        <div ref={sectionRef} className="w-full  px-4 py-16 sm:py-24 bg-black text-white ">
+        <div id='ourprojects' ref={sectionRef} className="w-full  px-4 py-16 sm:py-24 bg-black text-white ">
             <div className="text-center mb-16">
                 <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${getAnimationClass()}`}>
                     Our Projects

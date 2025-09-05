@@ -48,7 +48,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen py-20">
+    <div   id="our-services" className=   "bg-gray-900 min-h-screen py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h1 className="text-5xl font-bold text-white mb-6">Our Services</h1>

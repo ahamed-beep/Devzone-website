@@ -124,6 +124,9 @@ export const ProjectDetail = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const project = projectData.find(p => p.id === id);
+        useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
     
     const [headerRef, getHeaderAnimation] = useScrollAnimation();
     const [imageRef, getImageAnimation] = useScrollAnimation();
@@ -134,7 +137,7 @@ export const ProjectDetail = () => {
     // Handle case where project is not found
     if (!project) {
         return (
-            <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:py-24">
+            <div  className="w-full max-w-7xl mx-auto px-4 py-16 sm:py-24">
                 <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:-translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />

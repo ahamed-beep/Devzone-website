@@ -65,6 +65,26 @@ export function Footer() {
           </div>
         </div>
       </section>
+      <section className=" block md:hidden   w-full  bg-gradient-to-r from-[#28172C] via-[#010101] to-[#0F0F0F] text-white pb-5 py-8  overflow-hidden    ">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row items-start pl-8 justify-between">
+            <div className="lg:w-1/2 mb-8 lg:mb-0">
+              <h2 className="text-3xl lg:text-5xl font-semibold mb-4">
+                Experience superior
+                <br />
+                skip tracing
+              </h2>
+              <p className="text-gray-300 text-lg mb-6">150+ data points per search.</p>
+              <button className="bg-white text-black px-5 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                Get started
+              </button>
+            </div>
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+              
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="relative z-10 bg-black text-white py-16 px-6 md:pt-50">
         <div className="max-w-7xl mx-auto">

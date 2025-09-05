@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Section from './Components/Section';
 import { ProjectDetail } from './Components/ProjectDetail';
+import SocialMediaToggle from './Components/Sociallinks';
+import ThemeToggle from './Components/Darktheme';
 
 const App = () => {
   return (
@@ -11,6 +13,9 @@ const App = () => {
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </BrowserRouter>
+      <SocialMediaToggle />
+      <ThemeToggle/>
+
     </div>
   );
 };

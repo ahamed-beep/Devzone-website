@@ -39,12 +39,20 @@ export default function MobileHero() {
         </p>
 
         <div className="flex flex-col gap-4 w-full max-w-xs">
-          <button className="bg-white/90 text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition-colors backdrop-blur-sm">
+          <a href="##our-services" className="bg-white/90 text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition-colors backdrop-blur-sm" >
+
+         
+          <button >
             Services
           </button>
-          <button className="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
+           </a>
+           <a href="#ourprojects"className="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
+
+          
+          <button >
             Our work
           </button>
+           </a>
         </div>
 
         {/* Floating decorative elements */}
