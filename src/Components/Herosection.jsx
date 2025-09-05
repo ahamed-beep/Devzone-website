@@ -77,8 +77,7 @@ export default function Hero() {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute top-10 right-10 w-4 h-4 bg-blue-400 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-20 left-10 w-3 h-3 bg-cyan-400 rounded-full animate-bounce delay-300"></div>
+
           </div>
         </div>
       </div>

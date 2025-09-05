@@ -56,8 +56,7 @@ export default function MobileHero() {
         </div>
 
         {/* Floating decorative elements */}
-        <div className="absolute top-20 right-8 w-3 h-3 bg-blue-400 rounded-full animate-bounce drop-shadow-lg"></div>
-        <div className="absolute bottom-32 left-8 w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-300 drop-shadow-lg"></div>
+    
       </div>
     </section>
   )
