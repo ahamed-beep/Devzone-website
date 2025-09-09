@@ -32,15 +32,17 @@ const Contact = () => {
     <>
     <Navbar/>
       <div
-        className="relative w-full h-100 bg-cover bg-center flex items-center justify-center"
-        // style={{
-        //   backgroundImage: `url(${Img})`,
-        // }}
+        className="relative w-full h-100 bg-cover bg-center flex items-end pb-22 justify-start pl-15"
+style={{
+  backgroundImage: "url('https://images.pexels.com/photos/235986/pexels-photo-235986.jpeg')",
+}}
+
+
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative text-center text-white px-4">
-          <h1 className="text-5xl font-bold">LET&apos;S TALK</h1>
-          <p className="mt-4 text-lg max-w-xl mx-auto">
+        <div className="relative text-start text-white px-4">
+          <h1 className="text-6xl font-bold">LET&apos;S TALK</h1>
+          <p className="mt-4 font-light text-lg max-w-xl mx-auto">
             We&apos;re here to help and answer any questions you might have.
             <br />
             Feel free to reach out — we&apos;d love to hear from you!
@@ -52,51 +54,81 @@ const Contact = () => {
         <div className="max-w-6xl w-full grid md:grid-cols-2 gap-8">
           {/* Left Side - Form */}
           <div className="bg-gray-100 p-8 rounded-lg shadow">
-            <h2 className="text-2xl font-bold mb-6">GET IN TOUCH</h2>
+            <h2 className="text-2xl font-bold mb-2">GET IN TOUCH</h2>
+              <hr className="mb-4"/>
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex flex-col">
+                  <label htmlFor="user_name" className="mb-1 font-bold text-gray-700">
+                    Name 
+                  </label>
+                  <input
+                    id="user_name"
+                    type="text"
+                    name="user_name"
+                    placeholder="Enter your name"
+                    required
+                    className="w-full border bg-white border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="user_phone" className="mb-1 font-bold text-gray-700">
+                    Phone Number 
+                  </label>
+                  <input
+                    id="user_phone"
+                    type="tel"
+                    name="user_phone"
+                    placeholder="Enter your phone number"
+                    required
+                    className="w-full border bg-white border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col">
+                <label htmlFor="user_email" className="mb-1 font-bold text-gray-700">
+                  Email 
+                </label>
                 <input
-                  type="text"
-                  name="user_name"
-                  placeholder="Enter your name*"
+                  id="user_email"
+                  type="email"
+                  name="user_email"
+                  placeholder="Enter your email"
                   required
-                  className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="tel"
-                  name="user_phone"
-                  placeholder="Enter your phone number*"
-                  required
-                  className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full border bg-white border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Enter your email*"
-                required
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-              />
-              <textarea
-                name="message"
-                placeholder="Your message"
-                rows="4"
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-              ></textarea>
+
+              <div className="flex flex-col">
+                <label htmlFor="message" className="mb-1 font-bold text-gray-700">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your message"
+                  rows="4"
+                  className="w-full border bg-white border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                ></textarea>
+              </div>
+
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-2 rounded font-semibold hover:bg-red-700 transition"
+                className="w-60 bg-red-600 text-white py-2 rounded-md font-semibold hover:bg-red-700 transition"
               >
                 SEND MESSAGE
               </button>
             </form>
           </div>
 
+
           {/* Right Side - Contact Info */}
           <div className="space-y-8">
             {/* Contact Info */}
             <div className="bg-gray-100 p-8 rounded-lg shadow">
-              <h2 className="text-2xl font-bold mb-4">CONTACT INFORMATION</h2>
+              <h2 className="text-2xl font-bold mb-2">CONTACT INFORMATION</h2>
+                            <hr className="mb-4"/>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
                   <span className="text-red-600 text-lg">📞</span>
@@ -115,7 +147,8 @@ const Contact = () => {
 
             {/* Business Hours */}
             <div className="bg-gray-100 p-8 rounded-lg shadow">
-              <h2 className="text-2xl font-bold mb-4">BUSINESS HOURS</h2>
+              <h2 className="text-2xl font-bold mb-2">BUSINESS HOURS</h2>
+              <hr className="mb-4"/>
               <ul className="space-y-2">
                 <li className="flex justify-between">
                   <span>Monday - Friday:</span>

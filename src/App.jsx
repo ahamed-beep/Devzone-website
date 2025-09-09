@@ -3,8 +3,8 @@ import Section from './Components/Section';
 import { ProjectDetail } from './Components/ProjectDetail';
 import SocialMediaToggle from './Components/Sociallinks';
 import ThemeToggle from './Components/Darktheme';
-import Contact from './Components/Contactus';
 import About from './Components/Aboutus';
+import Contact from './Components/Contactus';
 
 const App = () => {
   return (
