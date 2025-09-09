@@ -49,7 +49,7 @@ export default function MobileHero() {
            <a href="#ourprojects"className="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
 
           
-          <button >
+          <button onmouse >
             Our work
           </button>
            </a>

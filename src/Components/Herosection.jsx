@@ -1,91 +1,100 @@
-"use client"
-
+import React from "react"
+import { motion } from "framer-motion"
 import Heromobile from "./Mobile-hero"
 
-export default function Hero() {
+const Hero = () => {
   return (
     <div>
-<div className=" block md:hidden" >
-   <Heromobile/> 
-</div>
-      <div className=" hidden md:block" >
-       
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-3xl"></div>
+      <div className="block md:hidden">
+        <Heromobile />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              Available for Work
-            </div>
+      <div className="hidden md:block">
+        <section className="relative min-h-screen overflow-hidden bg-black">
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
+            <source src="/Images/coding.mp4" type="video/mp4" />
+          </video>
 
-            {/* Main Heading */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Transform your ideas into{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                digital success
-              </span>{" "}
-              with us!
-            </h1>
+          <div className="relative z-10 container mx-auto px-4 pt-20">
+            <div className="flex items-center min-h-[80vh]">
+              {/* Left Content */}
+              <motion.div
+                className="space-y-8 max-w-3xl"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <motion.div
+                  className="inline-flex items-center gap-2 bg-green-500/60 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  Available for Work
+                </motion.div>
 
-            {/* Subtitle */}
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-lg">
-              We're your partner in product design, website creation, and branding for every stage of your business.
-            </p>
+                <motion.h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  Transform your ideas into{" "}
+                  <motion.span
+                    className="text-cyan-400 drop-shadow-lg"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  >
+                    digital success
+                  </motion.span>{" "}
+                  with us!
+                </motion.h1>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#our-services" >
+                <motion.p
+                  className=" text-xl text-white  leading-relaxed max-w-lg drop-shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  We're your partner in product design, website creation, and branding for every stage of your business.
+                </motion.p>
 
-            
-              <button className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Services
-              </button>
-                </a>
-                <a href="#ourprojects" >
-
-                
-              <button className="bg-transparent border border-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                Our work
-              </button>
-              </a>
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  <motion.button
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-black px-10 py-4 rounded-lg  font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 20px 40px rgba(6, 182, 212, 0.4)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Services
+                  </motion.button>
+                  <motion.button
+                    className="bg-transparent backdrop-blur-md border-2 border-white/60 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-white/10 hover:border-white/80 transition-all duration-300"
+                    whileHover={{
+                      scale: 1.05,
+                      borderColor: "#06b6d4",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Our work
+                  </motion.button>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
-
-          {/* Right Content - Video */}
-          <div className="relative flex justify-center items-center">
-            <div className="relative w-full max-w-md aspect-square">
-              {/* Video Container */}
-              <div className="absolute inset-0  rounded-full  overflow-hidden">
-                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                  <source src="/Images/coding.mp4" type="video/mp4" />
-                  {/* Fallback gradient if video doesn't load */}
-               
-                </video>
-              </div>
-
-            
-            
-            </div>
-
-            {/* Floating elements */}
-
-          </div>
-        </div>
+        </section>
       </div>
-
-      {/* Bottom fade effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
-    </section>
-     </div>  
     </div>
   )
 }
+
+export default Hero
