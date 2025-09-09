@@ -34,7 +34,7 @@ const MiniAbout = () => {
            
           <h3 className="text-4xl font-bold text-orange-500">Our Mission</h3>
          </div>
-      <section className="container mx-auto   grid md:grid-cols-2 mt-5 items-center">
+      <section className="container mx-auto  px-8  justify-center   grid md:grid-cols-2 mt-5 items-center">
         <div>
          
         </div>
@@ -82,53 +82,59 @@ const MiniAbout = () => {
       </section>
 
       {/* Clients Section */}
-      <section className=" pt-8 pb-12 ">
-        <div className="container  px-8 text-start">
-          <h3 className="text-4xl font-bold mb-4">All Clients</h3>
-          <p className="text-gray-600 mb-10">
-            We’ve collaborated with dozens of clients to deliver impactful
-            digital solutions across different industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto officiis incidunt reiciendis corporis, ullam laborum repellat provident corrupti facere molestias perferendis ea voluptate ipsa illo ducimus quia dolor! Suscipit?
-          </p>
-          <div className="flex gap-8 items-start">
-            <img
-              src="https://dummyimage.com/120x60/ccc/000&text=hpwec"
-              alt="Client"
-            />
-            <img
-              src="https://dummyimage.com/120x60/ccc/000&text=taf"
-              alt="Client"
-            />
-           
+    <section className="pt-8 pb-12">
+  <div className="container px-8 text-start">
+    <h3 className="text-4xl font-bold mb-4">All Clients</h3>
+    <p className="text-gray-600 mb-10">
+      We’ve collaborated with dozens of clients to deliver impactful
+      digital solutions across different industries. Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Enim architecto officiis incidunt
+      reiciendis corporis, ullam laborum repellat provident corrupti facere
+      molestias perferendis ea voluptate ipsa illo ducimus quia dolor! Suscipit?
+    </p>
+
+    {/* Horizontal Scroll Section */}
+    <div className="overflow-x-auto">
+      <div className="flex mb-6 gap-8 items-center">
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=hpwec"
+          alt="Client"
           
-           
-        
-          </div>
-        <div className="flex gap-8 items-start mt-10" >
-                <img
-              src="https://dummyimage.com/120x60/ccc/000&text=tafv"
-              alt="Client"
-            />
-            <img
-              src="https://dummyimage.com/120x60/ccc/000&text=hqwe"
-              alt="Client"
-            />
-          
-         
-          </div>
-          <div className="flex gap-8 items-start mt-10" >
-                <img
-              src="https://dummyimage.com/120x60/ccc/000&text=tafv"
-              alt="Client"
-            />
-            <img
-              src="https://dummyimage.com/120x60/ccc/000&text=hqwe"
-              alt="Client"
-            />
-          
-         
-          </div>
-        </div>
-      </section>
+        />
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=taf"
+          alt="Client"
+        />
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=tafv"
+          alt="Client"
+        />
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=hqwe"
+          alt="Client"
+        />
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=extra1"
+          alt="Client"
+        />
+        <img
+          src="https://dummyimage.com/120x60/ccc/000&text=extra2"
+          alt="Client"
+        />
+          <img
+          src="https://dummyimage.com/120x60/ccc/000&text=extra1"
+          alt="Client"
+        />
+          <img
+          src="https://dummyimage.com/120x60/ccc/000&text=extra1"
+          alt="Client"
+        />
+     
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
    
     </div>
