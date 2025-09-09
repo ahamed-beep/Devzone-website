@@ -102,10 +102,7 @@ const MiniAbout = () => {
               src="https://dummyimage.com/120x60/ccc/000&text=tvc"
               alt="Client"
             />
-             <img
-              src="https://dummyimage.com/120x60/ccc/000&text=brand"
-              alt="Client"
-            />
+           
         
           </div>
         <div className="flex gap-8 items-start mt-10" >
@@ -121,10 +118,7 @@ const MiniAbout = () => {
               src="https://dummyimage.com/120x60/ccc/000&text=brand"
               alt="Client"
             />
-             <img
-              src="https://dummyimage.com/120x60/ccc/000&text=brand"
-              alt="Client"
-            />
+         
           </div>
         </div>
       </section>
