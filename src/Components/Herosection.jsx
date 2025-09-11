@@ -11,12 +11,12 @@ const Hero = () => {
 
       <div className="hidden md:block">
         <section className="relative min-h-screen overflow-hidden bg-black">
-          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover ">
             <source src="/Images/coding.mp4" type="video/mp4" />
           </video>
 
-          <div className="relative z-10 container mx-auto px-4 pt-20">
-            <div className="flex items-center min-h-[80vh]">
+          <div className="relative z-10 container mx-auto px-20 pt-20 pb-15  backdrop-blur-xs  ">
+            <div className="flex  items-center min-h-[80vh]">
               {/* Left Content */}
               <motion.div
                 className="space-y-8 max-w-3xl"

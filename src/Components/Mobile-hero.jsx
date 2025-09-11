@@ -19,7 +19,7 @@ export default function MobileHero() {
       </video>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center backdrop-blur-xs">
         {/* Status Badge */}
         <div className="inline-flex items-center gap-2 bg-green-500/30 text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
           <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>

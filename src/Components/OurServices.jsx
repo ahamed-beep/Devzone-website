@@ -99,9 +99,9 @@ export default function ServicesSection() {
             <div className="flex justify-center lg:order-2">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yR5SQH9YQ2MU7gOnIwKFcjjNwpfydH.png"
+                  src="/Images/uidesigning.webp"
                   alt="UI/UX Design workspace"
-                  className="rounded-lg object-cover h-110 w-full max-w-lg"
+                  className="rounded-lg object-cover h-110 w-110 md:w-110 md:mt-2 max-w-lg"
                 />
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function ServicesSection() {
           {/* --- Branding & Identity --- */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:order-2">
-              <h2 className="text-4xl font-bold text-white mb-4">Branding & Identity</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Social Media Marketing</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Transform your brand into a powerful identity with strategic branding solutions.
               </p>
@@ -143,12 +143,12 @@ export default function ServicesSection() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:order-1">
+            <div className="flex justify-center lg:order-1 md:mt-3">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/color-palette-design-tools-dRDKdSoKEoPgDx8bBHnOEGccgjyDu1.png"
+                  src="/Images/socialmedia.webp"
                   alt="Branding materials"
-                  className="rounded-lg object-cover h-110 w-full max-w-lg"
+                  className="rounded-lg object-cover h-110  md:w-110 w-110  max-w-lg"
                 />
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function ServicesSection() {
             <div className="flex justify-center lg:order-2">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/mobile-app-development-coding-screen-with-smartpho-ytCU1lzFOi7ZRFQU5QwsptOSGbhjoD.png"
+                  src="/Images/app.webp"
                   alt="App Development"
                   className="rounded-lg object-cover h-110 w-full max-w-lg"
                 />
@@ -241,9 +241,9 @@ export default function ServicesSection() {
             <div className="flex justify-center lg:order-1">
               <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/web-development-coding-screen-PDmanjiDvW4LpDfNQUhlQfi2QiuAKw.png"
+                  src="/Images/web.webp"
                   alt="Web development"
-                  className="rounded-lg object-cover h-110 w-full max-w-lg"
+                  className="rounded-lg object-cover  md:w-110 h-110 w-110 max-w-lg"
                 />
               </div>
             </div>

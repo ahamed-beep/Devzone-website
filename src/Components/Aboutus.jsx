@@ -23,7 +23,7 @@ const About = () => {
             className="w-full h-full object-center object-cover"
           />
         </div>
-        <div className="relative text-center text-white bg-white/30 backdrop-blur-xl px-10 py-14 rounded-xl">
+        <div className="relative text-center text-white bg-white/30 backdrop-blur-md px-10 py-14 rounded-xl">
  <h2 className="text-5xl  font-bold text-black">About Us</h2>
  <p className="mt-4 text-md max-w-xl text-black">
    We are ready to help bring your business to the digital world with

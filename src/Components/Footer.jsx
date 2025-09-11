@@ -37,24 +37,14 @@ export function Footer() {
             </div>
             <div className="lg:w-1/2 flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full border border-green-400/20 flex items-center justify-center">
+                <div className="w-80 h-80 rounded-full border border-yellow-400/20 flex items-center justify-center">
                   <div className="w-64 h-64 rounded-full flex items-center justify-center relative">
                     {/* Dotted globe pattern */}
                     <div className="absolute inset-0 rounded-full overflow-hidden">
                       <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-transparent rounded-full">
                         {/* Dotted pattern overlay */}
                         <div className="absolute inset-0 opacity-60">
-                          {Array.from({ length: 200 }).map((_, i) => (
-                            <div
-                              key={i}
-                              className="absolute w-1 h-1 bg-white/40 rounded-full"
-                              style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 2}s`,
-                              }}
-                            />
-                          ))}
+                       <img src="/Images/footer.jpeg" alt="" />
                         </div>
                       </div>
                     </div>
@@ -123,7 +113,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className=" flex gap-40 whitespace-nowrap" >
+            <div className=" flex gap-60" >
 
            
 
@@ -174,44 +164,21 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/linkedin" className="text-gray-300 hover:text-white transition-colors">
+                  <Link to="https://www.linkedin.com/company/devzone-software/?viewAsMember=true" className="text-gray-300 hover:text-white transition-colors">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link to="/twitter" className="text-gray-300 hover:text-white transition-colors">
-                    Twitter
+                  <Link to="https://api.whatsapp.com/send/?phone=923290303391&text&type=phone_number&app_absent=0" className="text-gray-300 hover:text-white transition-colors">
+                    Whatsapp
                   </Link>
                 </li>
-                <li>
-                  <Link to="/youtube" className="text-gray-300 hover:text-white transition-colors">
-                    Youtube
-                  </Link>
-                </li>
+               
               </ul>
             </div>
 
             {/* Legal */}
-            <div>
-              <h3 className="text-white font-medium mb-6">Legal</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
-                    Terms of service
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
-                    Privacy policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/cookies" className="text-gray-300 hover:text-white transition-colors">
-                    Cookie policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            
              </div>
              </div>
           </div>
@@ -351,46 +318,7 @@ export function Footer() {
             </div>
 
             {/* Legal Accordion */}
-            <div className="border-b border-gray-800 pb-4">
-              <button
-                onClick={() => toggleSection("legal")}
-                className="flex items-center justify-between w-full text-left"
-              >
-                <h3 className="text-white font-medium text-lg">Legal</h3>
-                {openSections.legal ? (
-                  <ChevronUp className="h-5 w-5 text-gray-400" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-400" />
-                )}
-              </button>
-              <AnimatePresence>
-                {openSections.legal && (
-                  <motion.ul
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden mt-4 space-y-3 pl-4"
-                  >
-                    <li>
-                      <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
-                        Terms of service
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
-                        Privacy policy
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/cookies" className="text-gray-300 hover:text-white transition-colors">
-                        Cookie policy
-                      </Link>
-                    </li>
-                  </motion.ul>
-                )}
-              </AnimatePresence>
-            </div>
+        
           </div>
 
           {/* Copyright */}
