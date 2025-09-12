@@ -39,8 +39,8 @@ function TeamMemberCard({ member }) {
           <p className="text-muted-foreground text-sm">{member.role}</p>
         </div>
         {/* Navigation Arrow */}
-        <div className="flex-shrink-0 w-12 h-12 rounded-full border border-orange-200 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
-             <svg   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-5 h-5 text-orange-500" >
+        <div className="flex-shrink-0 w-12 h-12 rounded-full border border-teal-200 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
+             <svg   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-5 h-5 text-teal-600" >
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
 </svg>
         </div>
@@ -58,7 +58,7 @@ export default function FacesOfInnovation() {
       <div className="flex items-start pl-17  mb-8">
         <div>
           <h2 className=" md:text-3xl font-bold text-foreground mb-2">
-            The Faces of <span className="text-orange-500">Innovation</span>
+            The Faces of <span className="bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  bg-clip-text">Innovation</span>
           </h2>
           <p className="text-muted-foreground text-sm md:text-base text-shadow-gray-600  font-light mt-1 ">Behind Every Line of Code, There's a Visionary.</p>
         </div>

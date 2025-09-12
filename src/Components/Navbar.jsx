@@ -236,7 +236,9 @@ export default function Navbar() {
       initial={{ y: -100 }}
         animate={{
     y: 0,
-    backgroundColor: isScrolled ? "rgb(30 58 138)" : "rgba(255, 255, 255, 0)", // ✅ Transparent at top
+ background: isScrolled 
+     ? "linear-gradient(to right, rgb(6, 182, 212), rgb(20, 184, 166))" 
+     : "rgba(255, 255, 255, 0)",
     backdropFilter: isScrolled ? "blur(10px)" : "none", // ✅ optional glass blur effect
   }}
       transition={{

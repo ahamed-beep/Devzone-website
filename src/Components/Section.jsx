@@ -4,10 +4,8 @@ import Testimonials from './Testimonials'
 import Hero from './Herosection'
 import ServicesSection from './OurServices'
 import { ProjectsSection } from './Projects'
-import { Footer } from './Footer'
-import SocialMediaToggle from './Sociallinks'
-import Darktheme from './Darktheme'
-import ThemeToggle from './Darktheme'
+import Footer from './Footer'
+
 
 const Section = () => {
   return (

@@ -1,6 +1,5 @@
-"use client";
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 // --- DATA ---
 const projectData = [
@@ -75,113 +74,274 @@ const projectData = [
     },
 ];
 
-// --- HOOKS ---
-const useScrollAnimation = (threshold = 0.1) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold }
-        );
-
-        const currentRef = ref.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, [threshold]);
-
-    const getAnimationClass = (delay = '') => {
-        return `transition-all ease-out duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'} ${delay}`;
-    };
-
-    return [ref, getAnimationClass];
-};
-
 // --- COMPONENTS ---
-const ProjectCard = ({ project, onClick }) => {
+const ProjectCard = ({ project, onClick, delay = 0 }) => {
+    const cardRef = useRef(null);
+    const isInView = useInView(cardRef, { 
+        once: true, 
+        margin: "-100px 0px -100px 0px" 
+    });
+
     return (
-        <div 
+        <motion.div 
+            ref={cardRef}
+            initial={{ opacity: 0, y: 60, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.95 }}
+            transition={{
+                duration: 0.8,
+                delay: delay,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }}
             className="group relative overflow-hidden rounded-lg shadow-lg w-full h-full cursor-pointer"
             onClick={onClick}
             role="button"
             tabIndex={0}
             onKeyPress={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}
             aria-label={`View details for ${project.title}`}
+            whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+            }}
+            whileTap={{ scale: 0.98 }}
         >
-            <img
+            <motion.img
                 src={project.imageUrl}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                animate={isInView ? { scale: 1 } : { scale: 1.1 }}
+                transition={{ 
+                    duration: 1.2, 
+                    delay: delay + 0.2,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                whileHover={{ scale: 1.05 }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+            
+            <motion.div 
+                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: delay + 0.4 }}
+            />
+            
+            <motion.div 
+                className="absolute bottom-0 left-0 right-0 p-5 text-white"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: delay + 0.6 }}
+            >
                 <div className="flex justify-between items-end">
                     <div>
-                        <h3 className="text-xl font-bold">{project.subtitle}</h3>
-                        <p className="text-md text-gray-300">{project.date}</p>
+                        <motion.h3 
+                            className="text-xl font-bold mb-2"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, delay: delay + 0.8 }}
+                        >
+                            {project.subtitle}
+                        </motion.h3>
+                        <motion.p 
+                            className="text-md text-gray-300"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5, delay: delay + 1.0 }}
+                        >
+                            {project.date}
+                        </motion.p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
 export const ProjectsSection = () => {
-    const navigate = useNavigate();
     const featuredProject = projectData.find(p => p.isFeatured);
     const otherProjects = projectData.filter(p => !p.isFeatured);
-    const [sectionRef, getAnimationClass] = useScrollAnimation();
+    
+    const sectionRef = useRef(null);
+    const headerRef = useRef(null);
+    const mainContentRef = useRef(null);
+    
+    const isHeaderInView = useInView(headerRef, { 
+        once: true, 
+        margin: "-50px 0px -50px 0px" 
+    });
+    
+    const isMainContentInView = useInView(mainContentRef, { 
+        once: true, 
+        margin: "-100px 0px -100px 0px" 
+    });
 
     // Handle project selection and navigate to detail page
     const handleProjectSelect = (project) => {
-        navigate(`/project/${project.id}`);
+        console.log(`Navigate to project/${project.id}`);
+        // navigate(`/project/${project.id}`);
+    };
+
+    const headerVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const titleVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }
+        }
+    };
+
+    const subtitleVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }
+        }
+    };
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const featuredCardVariants = {
+        hidden: { opacity: 0, x: -80, scale: 0.9 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+                duration: 1.0,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }
+        }
+    };
+
+    const sideCardsVariants = {
+        hidden: { opacity: 0, x: 80, scale: 0.9 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+                duration: 1.0,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
     };
 
     return (
-        <div id='ourprojects' ref={sectionRef} className="w-full  px-4 py-16 sm:py-24 bg-black text-white ">
-            <div className="text-center mb-16">
-                <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${getAnimationClass()}`}>
+        <motion.div 
+            id='ourprojects' 
+            ref={sectionRef} 
+            className="w-full px-4 py-16 sm:py-24 bg-black text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+        >
+            {/* Header Section */}
+            <motion.div 
+                ref={headerRef}
+                className="text-center mb-16"
+                initial="hidden"
+                animate={isHeaderInView ? "visible" : "hidden"}
+                variants={headerVariants}
+            >
+                <motion.h1 
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
+                    variants={titleVariants}
+                >
                     Our Projects
-                </h1>
-                <p className={`text-[#B5B6B6] text-lg sm:text-xl ${getAnimationClass('delay-100')}`}>
+                </motion.h1>
+                <motion.p 
+                    className="text-[#B5B6B6] text-lg sm:text-xl"
+                    variants={subtitleVariants}
+                >
                     A showcase of our passion and commitment to excellence.
-                </p>
-            </div>
-            <div className={`flex flex-col lg:flex-row gap-8 ${getAnimationClass('delay-200')}`}>
-                <div className="lg:w-1/2">
+                </motion.p>
+            </motion.div>
+
+            {/* Projects Grid */}
+            <motion.div 
+                ref={mainContentRef}
+                className="flex flex-col lg:flex-row gap-8"
+                initial="hidden"
+                animate={isMainContentInView ? "visible" : "hidden"}
+                variants={containerVariants}
+            >
+                {/* Featured Project */}
+                <motion.div 
+                    className="lg:w-1/2"
+                    variants={featuredCardVariants}
+                >
                     {featuredProject && (
                         <div className="h-[34rem]">
                             <ProjectCard 
                                 project={featuredProject} 
-                                onClick={() => handleProjectSelect(featuredProject)} 
+                                onClick={() => handleProjectSelect(featuredProject)}
+                                delay={0}
                             />
                         </div>
                     )}
-                </div>
-                <div className="lg:w-1/2 flex flex-col gap-8">
-                    {otherProjects.map((project) => (
-                       <div className="h-64" key={project.id}>
+                </motion.div>
+
+                {/* Other Projects */}
+                <motion.div 
+                    className="lg:w-1/2 flex flex-col gap-8"
+                    variants={sideCardsVariants}
+                >
+                    {otherProjects.map((project, index) => (
+                       <motion.div 
+                           className="h-64" 
+                           key={project.id}
+                           variants={{
+                               hidden: { opacity: 0, y: 60, scale: 0.95 },
+                               visible: {
+                                   opacity: 1,
+                                   y: 0,
+                                   scale: 1,
+                                   transition: {
+                                       duration: 0.8,
+                                       delay: index * 0.2,
+                                       ease: [0.25, 0.46, 0.45, 0.94]
+                                   }
+                               }
+                           }}
+                       >
                            <ProjectCard 
                                project={project} 
-                               onClick={() => handleProjectSelect(project)} 
+                               onClick={() => handleProjectSelect(project)}
+                               delay={index * 0.1}
                            />
-                       </div>
+                       </motion.div>
                     ))}
-                </div>
-            </div>
-        </div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 };

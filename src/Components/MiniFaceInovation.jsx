@@ -42,7 +42,7 @@ function TeamMemberCard({ member }) {
 
         {/* Navigation Arrow */}
         <div className="flex-shrink-0 w-10 h-10 rounded-full border border-orange-200 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
-          <ChevronRight className="w-4 h-4 text-orange-500" />
+          <ChevronRight className="w-4 h-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  bg-clip-text" />
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@ export default function MiniFaceInovation() {
       <div className="flex items-center px-9 mt-10 justify-between mb-5">
         <div>
           <h2 className="text-4xl  font-bold text-foreground mb-2">
-            The Faces of <span className="text-orange-500">Innovation</span>
+            The Faces of <span className="bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  bg-clip-text">Innovation</span>
           </h2>
           <p className="text-muted-foreground text-shadow-gray-600 text-sm md:text-base">Behind Every Line of Code, There's a Visionary.</p>
         </div>
@@ -116,7 +116,7 @@ export default function MiniFaceInovation() {
               key={index}
               onClick={() => setCurrentMemberIndex(index)}
               className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentMemberIndex ? "bg-orange-500" : "bg-gray-300"
+                index === currentMemberIndex ? "bg-gradient-to-r from-cyan-500 to-teal-500 " : "bg-gray-300"
               }`}
             />
           ))}

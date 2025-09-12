@@ -42,7 +42,7 @@ const Hero = () => {
                 >
                   Transform your ideas into{" "}
                   <motion.span
-                    className="text-cyan-400 drop-shadow-lg"
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  bg-clip-text drop-shadow-lg"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.6 }}
