@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Footer from './Footer';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 
 // --- DATA ---
 const projectData = [

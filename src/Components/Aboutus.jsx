@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import Navbar from "./navbar"
+import Navbar from "./Navbar"
 import FacesOfInnovation from "./FacesInovation"
 import MiniAbout from "./MiniAboutus"
 import Footer from "./Footer"

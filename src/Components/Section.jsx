@@ -4,7 +4,7 @@ import Hero from './Herosection'
 import ServicesSection from './OurServices'
 import { ProjectsSection } from './Projects'
 import Footer from './Footer'
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 
 const Section = () => {

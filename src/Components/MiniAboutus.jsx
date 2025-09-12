@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Navbar from "./navbar";
+import Navbar from "./Navbar"
 import { motion, useInView } from "framer-motion"
 import MiniFaceInovation from "./MiniFaceInovation";
 

@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import emailjs from "emailjs-com"
-import Navbar from "./navbar"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 const Contact = () => {
