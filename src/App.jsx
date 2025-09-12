@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Section from './Components/Section';
 import { ProjectDetail } from './Components/ProjectDetail';
 import SocialMediaToggle from './Components/Sociallinks';
-import ThemeToggle from './Components/Darktheme';
 import About from './Components/Aboutus';
 import Contact from './Components/Contactus';
 
@@ -20,7 +19,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <SocialMediaToggle />
-      <ThemeToggle/>
+  
 
     </div>
   );

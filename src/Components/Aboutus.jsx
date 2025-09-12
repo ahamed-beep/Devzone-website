@@ -1,9 +1,9 @@
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Navbar from "./navbar"
-import Footer from "./footer"
 import FacesOfInnovation from "./FacesInovation"
 import MiniAbout from "./MiniAboutus"
+import Footer from "./Footer"
 
 const AnimatedSection = ({ children, delay = 0 }) => {
   const ref = useRef(null)
