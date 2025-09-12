@@ -181,7 +181,7 @@ export default function AnimatedServicesSection() {
     {
       title: "UI/UX Design",
       description: "Seamless, user-centric design that enhances engagement and delivers an intuitive experience.",
-      imageSrc: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=400&fit=crop",
+      imageSrc: "/Images/uidesigning.webp",
       imageAlt: "UI/UX Design workspace",
       imagePosition: "right",
       accordionItems: [
@@ -214,8 +214,7 @@ export default function AnimatedServicesSection() {
     {
       title: "Social Media Marketing",
       description: "Transform your brand into a powerful identity with strategic branding solutions.",
-      imageSrc: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=400&fit=crop",
-      imageAlt: "Social Media Marketing materials",
+      imageSrc: "/Images/socialmedia.webp",
       imagePosition: "left",
       accordionItems: [
         {
@@ -248,7 +247,7 @@ export default function AnimatedServicesSection() {
       title: "App Development",
       description:
         "Native and cross-platform mobile applications that deliver exceptional user experiences and robust functionality.",
-      imageSrc: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=400&fit=crop",
+      imageSrc: "/Images/app.webp",
       imageAlt: "App Development",
       imagePosition: "right",
       accordionItems: [
@@ -281,7 +280,7 @@ export default function AnimatedServicesSection() {
     {
       title: "Website Design & Development",
       description: "High-performance, responsive websites that combine aesthetics with functionality.",
-      imageSrc: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=400&fit=crop",
+      imageSrc: "/Images/web.webp",
       imageAlt: "Web development",
       imagePosition: "left",
       accordionItems: [
