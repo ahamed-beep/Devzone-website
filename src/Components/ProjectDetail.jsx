@@ -189,11 +189,8 @@ export const ProjectDetail = () => {
             </div>
 
             {/* Challenge & Approach */}
-            <section ref={contentRef} className={`grid md:grid-cols-2 gap-12 lg:gap-16 ${getContentAnimation()}`}>
-                <div>
-                    <h2 className="text-3xl text-[#FFFFFD] font-bold mb-4">The Challenge</h2>
-                    <p className="text-gray-300 text-lg leading-relaxed">{project.challenge}</p>
-                </div>
+            <section ref={contentRef} className={`grid md:grid-cols-2 gap-12 justify-center items-center lg:gap-16 ${getContentAnimation()}`}>
+            
                 <div>
                     <h2 className="text-3xl text-[#FFFFFD] font-bold mb-4">Our Approach</h2>
                     <p className="text-gray-300 text-lg leading-relaxed">{project.approach}</p>

@@ -17,7 +17,7 @@ const Section = () => {
              <ServicesSection/>
              <ProjectsSection/>
          
-        <div className='mt-10' >
+        <div className='' >
 
       {/* <Testimonials/> */}
         </div>

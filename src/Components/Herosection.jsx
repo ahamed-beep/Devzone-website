@@ -75,7 +75,10 @@ const Hero = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Services
+                  <a href="#our-services" >
+  Services
+                  </a>
+                  
                   </motion.button>
                   <motion.button
                     className="bg-transparent backdrop-blur-md border-2 border-white/60 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-white/10 hover:border-white/80 transition-all duration-300"
@@ -85,7 +88,10 @@ const Hero = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Our work
+              
+                        <a href="#ourprojects" >  Our work</a>
+                   
+                  
                   </motion.button>
                 </motion.div>
               </motion.div>

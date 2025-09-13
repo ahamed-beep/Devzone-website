@@ -39,7 +39,7 @@ export default function MobileHero() {
         </p>
 
         <div className="flex flex-col gap-4 w-full max-w-xs">
-          <a href="##our-services" className="bg-white/90 text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition-colors backdrop-blur-sm" >
+          <a href="#our-services" className="bg-white/90 text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition-colors backdrop-blur-sm" >
 
          
           <button >

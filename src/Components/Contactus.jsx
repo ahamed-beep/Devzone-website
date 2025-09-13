@@ -115,9 +115,9 @@ const Contact = () => {
       {/* Hero Section */}
       <motion.div
         ref={heroRef}
-        className="relative w-full h-screen bg-cover bg-center flex items-end pb-16 sm:pb-22 justify-start pl-4 sm:pl-8 lg:pl-15"
+        className="relative w-full h md:h-100 h-90 bg-cover bg-center object-center object-cover flex items-end pb-16 sm:pb-22 justify-start pl-4 sm:pl-8 lg:pl-15"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop')",
+          backgroundImage: "url('/Images/contact.webp')",
         }}
         initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
@@ -286,7 +286,7 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                className="w-full sm:w-60 bg-red-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-700 transition-all text-sm sm:text-base"
+                className="w-full sm:w-60 bg-blue-900 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-700 transition-all text-sm sm:text-base"
                 variants={formFieldVariants}
                 custom={4}
                 whileHover={{
@@ -337,9 +337,9 @@ const Contact = () => {
                 animate={contactInfoInView ? "visible" : "hidden"}
               >
                 {[
-                  { icon: "📞", text: "773-305-1420" },
-                  { icon: "📍", text: "1425 N McLean Blvd, Elgin, IL" },
-                  { icon: "📧", text: "office@skiptontrans.com" },
+                  { icon: "📞", text: "+92 3290303391" },
+                  { icon: "📍", text: "Lahore , Pakistan" },
+                  { icon: "📧", text: "devzonesoftwarehouse@gmail.com" },
                 ].map((item, i) => (
                   <motion.li
                     key={i}
@@ -402,9 +402,8 @@ const Contact = () => {
                 animate={businessHoursInView ? "visible" : "hidden"}
               >
                 {[
-                  { day: "Monday - Friday:", hours: "9:00 am - 8:00 pm" },
-                  { day: "Saturday:", hours: "9:00 am - 6:00 pm" },
-                  { day: "Sunday:", hours: "9:00 am - 5:00 pm" },
+                  { day: "Monday - Sunday:", hours: "24/7 Availible" },
+               
                 ].map((item, i) => (
                   <motion.li
                     key={i}

@@ -261,7 +261,7 @@ export const ProjectsSection = () => {
         <motion.div 
             id='ourprojects' 
             ref={sectionRef} 
-            className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-black text-white overflow-x-hidden"
+            className="w-full  px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-black text-white overflow-x-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}

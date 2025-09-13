@@ -128,7 +128,7 @@ const AnimatedAbout = () => {
           </AnimatedSection>
 
           {/* Clients Section */}
-          <AnimatedSection delay={0.5}>
+          {/* <AnimatedSection delay={0.5}>
             <section className="py-12">
               <div className="container mx-auto px-6 text-center">
                 <motion.h3
@@ -177,7 +177,7 @@ const AnimatedAbout = () => {
                 </motion.div>
               </div>
             </section>
-          </AnimatedSection>
+          </AnimatedSection> */}
         </div>
       </div>
       <Footer />

@@ -32,9 +32,9 @@ const MiniAbout = () => {
       <div className="font-sans text-gray-600">
         {/* About Us Section */}
         <AnimatedSection>
-          <section className="relative bg-gray-100 h-full items-center justify-center">
+          <section className="relative object-center object-cover  bg-gray-100 h-full items-center justify-center">
             <div className="inset-0">
-              <img src="/Images/about.jpeg" alt="workspace" className="w-full h-full object-center object-cover" />
+              <img src="/Images/about.webp" alt="workspace" className="w-full h-90 object-center object-cover bg-center bg-cover" />
             </div>
             <motion.div
               className="text-start text-white bg-white/80 px-5 pt-8 rounded-md"
@@ -107,7 +107,7 @@ const MiniAbout = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.4}>
-          <section className="container px-8 pt-16 pb-1 text-start">
+          <section className="container mb-10 px-8 pt-16 pb-1 text-start">
             <motion.h3
               className="text-4xl font-bold"
               initial={{ opacity: 0, y: 30 }}
@@ -142,61 +142,8 @@ const MiniAbout = () => {
           </section>
         </AnimatedSection>
 
-        {/* Clients Section */}
-        <AnimatedSection delay={0.5}>
-          <section className="pt-8 pb-12">
-            <div className="container px-8 text-start">
-              <motion.h3
-                className="text-4xl font-bold mb-4 flex gap-2"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                All <p className="bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  bg-clip-text" >  Clients</p> 
-              </motion.h3>
-              <motion.p
-                className="text-gray-600 mb-10"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                We've collaborated with dozens of clients to deliver impactful digital solutions across different
-                industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto officiis incidunt
-                reiciendis corporis, ullam laborum repellat provident corrupti facere molestias perferendis ea voluptate
-                ipsa illo ducimus quia dolor! Suscipit?
-              </motion.p>
 
-              {/* Horizontal Scroll Section */}
-              <div className="overflow-x-auto">
-                <motion.div
-                  className="flex mb-6 gap-8 items-center"
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  {["hpwec", "taf", "tafv", "hqwe", "extra1", "extra2", "extra3", "extra4"].map((text, index) => (
-                    <motion.img
-                      key={text}
-                      src={`https://dummyimage.com/120x60/ccc/000&text=${text}`}
-                      alt="Client"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.05 * index,
-                      }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.1 }}
-                    />
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
+       
       </div>
     </div>
   );

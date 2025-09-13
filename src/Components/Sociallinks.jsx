@@ -26,26 +26,26 @@ const SocialMediaToggle = () => {
     {
       name: "WhatsApp",
       icon: MessageCircle,
-      url: "https://wa.me/your-number",
+      url: "https://api.whatsapp.com/send/?phone=923290303391&text&type=phone_number&app_absent=0",
       color: "bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/your-profile",
+      url: "https://www.instagram.com/devzone.official/",
       color:
         "bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 dark:from-purple-600 dark:to-pink-600 dark:hover:from-purple-700 dark:hover:to-pink-700",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/your-profile",
+      url: "https://www.linkedin.com/company/devzone-software/?viewAsMember=true",
       color: "bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800",
     },
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://facebook.com/your-profile",
+      url: "https://web.facebook.com/profile.php?id=61579881629526",
       color: "bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700",
     },
   ]

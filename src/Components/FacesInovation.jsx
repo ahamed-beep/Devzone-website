@@ -3,22 +3,23 @@ import { ChevronRight } from "lucide-react";
 const teamMembers = [
   {
     id: 1,
-    name: "Jacob Wihardja",
-    role: "Founder",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/professional-man-in-light-blue-shirt-smiling-wzygeMgpdee4M8SGMJ1wgMDvIwx3Ka.jpg",
+    name: "Shiekh Usman",
+    role: "CEO",
+    image: "Images/usman.webp",
   },
   {
     id: 2,
-    name: "Khamir",
-    role: "Web Developer",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/professional-man-with-beard-in-blue-shirt-FoVeOWcGYxeO4E1a8ivk37mCQpHlph.jpg",
+   name: "Hassan Raza",
+    role: "co-Founder",
+       image: "/Images/hassan.webp",
+
   },
  
   {
     id: 4,
-    name: "Irman Maulana",
-    role: "UI Designer",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/professional-man-with-beard-smiling-ClR7xFyvPc764QXtHx9q6DFqBkMO8g.jpg",
+    name: "Abdul Ahad",
+    role: "Full Stack Developer",
+  image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/professional-man-with-beard-in-blue-shirt-FoVeOWcGYxeO4E1a8ivk37mCQpHlph.jpg",
   },
 ];
 
@@ -29,7 +30,7 @@ function TeamMemberCard({ member }) {
         <img
           src={member.image }
           alt={member.name}
-          className="w-full h-full  object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-100 object-center bg-center bg-cover   object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       {/* Member Info */}

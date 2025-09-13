@@ -167,13 +167,16 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <motion.div 
-              variants={slideInLeft}
-              className="lg:w-1/2 mb-8 lg:mb-0 line-clamp-3 "
+              variants={slideInLeft} 
+              className="lg:w-1/2 mb-8 lg:mb-0   "
             >
+
+              <div className=" line-clamp-4 space-y-10 gap-10" >
+
               <motion.h2 
                 variants={fadeInUp}
-                className="text-3xl lg:text-5xl font-semibold mb-4"
-              >
+                className="text-3xl lg:text-5xl  space-y-4 font-semibold mb-10"
+                >
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -183,14 +186,16 @@ export default function Footer() {
                 </motion.span>
                 <br />
                 <motion.span
+                className=" mt-4"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.8 }}
-                >
+                  >
                into  Powerful Digital Products
                 </motion.span>
               </motion.h2>
            
+                  </div>
             </motion.div>
             <motion.div 
               variants={slideInRight}
@@ -258,11 +263,11 @@ export default function Footer() {
             >
               <motion.h2 
                 variants={itemVariants}
-                className="text-3xl lg:text-5xl font-semibold mb-4"
+                className="text-3xl lg:text-5xl mt font-semibold mb-4"
               >
-                Experience superior
+              Transforming Ideas into
                 <br />
-                skip tracing
+                Powerful Digital Products.
               </motion.h2>
           
            
@@ -389,8 +394,8 @@ export default function Footer() {
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      { to: "/facebook", label: "Facebook" },
-                      { to: "/instagram", label: "Instagram" },
+                      { to: "https://web.facebook.com/profile.php?id=61579881629526", label: "Facebook" },
+                      { to: "https://www.instagram.com/devzone.official/", label: "Instagram" },
                       { to: "https://www.linkedin.com/company/devzone-software/?viewAsMember=true", label: "LinkedIn" },
                       { to: "https://api.whatsapp.com/send/?phone=923290303391&text&type=phone_number&app_absent=0", label: "Whatsapp" }
                     ].map((link, index) => (
@@ -570,10 +575,10 @@ export default function Footer() {
                     className="overflow-hidden mt-4 space-y-3 pl-4"
                   >
                     {[
-                      { to: "/facebook", label: "Facebook" },
-                      { to: "/instagram", label: "Instagram" },
-                      { to: "/linkedin", label: "LinkedIn" },
-                      { to: "/twitter", label: "Whatsapp" },
+                      { to: "https://web.facebook.com/profile.php?id=61579881629526", label: "Facebook" },
+                      { to: "https://www.instagram.com/devzone.official/", label: "Instagram" },
+                      { to: "https://www.linkedin.com/company/devzone-software/?viewAsMember=true", label: "LinkedIn" },
+                      { to: "https://api.whatsapp.com/send/?phone=923290303391&text&type=phone_number&app_absent=0", label: "Whatsapp" }
                     ].map((link, index) => (
                       <li
                         key={link.to}
