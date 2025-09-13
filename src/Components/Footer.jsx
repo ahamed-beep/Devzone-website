@@ -168,7 +168,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <motion.div 
               variants={slideInLeft}
-              className="lg:w-1/2 mb-8 lg:mb-0"
+              className="lg:w-1/2 mb-8 lg:mb-0 line-clamp-3 "
             >
               <motion.h2 
                 variants={fadeInUp}
@@ -179,7 +179,7 @@ export default function Footer() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
                 >
-                  Experience superior
+                 Transforming Ideas 
                 </motion.span>
                 <br />
                 <motion.span
@@ -187,27 +187,10 @@ export default function Footer() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.8 }}
                 >
-                  skip tracing
+               into  Powerful Digital Products
                 </motion.span>
               </motion.h2>
-              <motion.p 
-                variants={fadeInUp}
-                transition={{ delay: 0.4 }}
-                className="text-gray-300 text-lg mb-6"
-              >
-                150+ data points per search.
-              </motion.p>
-              <motion.button 
-                variants={buttonHover}
-                whileHover="hover"
-                whileTap="tap"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.6, type: "spring", stiffness: 200 }}
-                className="bg-white text-black px-5 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-              >
-                Get started
-              </motion.button>
+           
             </motion.div>
             <motion.div 
               variants={slideInRight}
@@ -281,24 +264,8 @@ export default function Footer() {
                 <br />
                 skip tracing
               </motion.h2>
-              <motion.p 
-                variants={itemVariants}
-                transition={{ delay: 0.3 }}
-                className="text-gray-300 text-lg mb-6"
-              >
-                150+ data points per search.
-              </motion.p>
-              <motion.button 
-                variants={buttonHover}
-                whileHover="hover"
-                whileTap="tap"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="bg-white text-black px-5 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-              >
-                Get started
-              </motion.button>
+          
+           
             </motion.div>
           </div>
         </div>
