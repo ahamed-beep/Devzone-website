@@ -4,14 +4,18 @@ import { motion, useInView } from "framer-motion"
 const AccordionItem = ({ title, description, isOpen, onToggle, delay = 0 }) => {
   const contentRef = useRef(null)
   const itemRef = useRef(null)
-  const isInView = useInView(itemRef, { once: true, margin: "-100px" })
+  const isInView = useInView(itemRef, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.3
+  })
 
   return (
     <motion.div
       ref={itemRef}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay: delay, ease: "easeOut" }}
       className="border-b border-gray-700/50 last:border-b-0"
     >
       <button
@@ -19,9 +23,9 @@ const AccordionItem = ({ title, description, isOpen, onToggle, delay = 0 }) => {
         className="w-full flex justify-between items-center text-left py-4 hover:bg-gray-800/20 transition-colors"
         aria-expanded={isOpen}
       >
-        <span className="text-white font-medium text-lg">{title}</span>
+        <span className="text-white font-medium text-base sm:text-lg pr-4">{title}</span>
         <svg
-          className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          className={`w-5 h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -31,12 +35,12 @@ const AccordionItem = ({ title, description, isOpen, onToggle, delay = 0 }) => {
       </button>
       <div
         ref={contentRef}
-        className="transition-all duration-500 ease-in-out overflow-hidden"
+        className="transition-all duration-300 ease-in-out overflow-hidden"
         style={{
-          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0px",
+          maxHeight: isOpen ? `${contentRef.current?.scrollHeight || 1000}px` : "0px",
         }}
       >
-        <div className="pb-4 pr-8">
+        <div className="pb-4 pr-4 sm:pr-8">
           <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
         </div>
       </div>
@@ -56,8 +60,16 @@ const ServiceSection = ({
   const [openAccordions, setOpenAccordions] = useState({})
   const contentRef = useRef(null)
   const imageRef = useRef(null)
-  const isContentInView = useInView(contentRef, { once: true, margin: "-100px" })
-  const isImageInView = useInView(imageRef, { once: true, margin: "-100px" })
+  const isContentInView = useInView(contentRef, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.2
+  })
+  const isImageInView = useInView(imageRef, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.2
+  })
 
   const toggleAccordion = (key) => {
     setOpenAccordions((prev) => ({
@@ -67,12 +79,12 @@ const ServiceSection = ({
   }
 
   const contentVariants = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut",
         staggerChildren: 0.1,
       },
@@ -82,49 +94,55 @@ const ServiceSection = ({
   const imageVariants = {
     hidden: {
       opacity: 0,
-      x: imagePosition === "right" ? 100 : -100,
-      scale: 0.9,
+      x: imagePosition === "right" ? 50 : -50,
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.8,
-        delay: 0.4,
+        duration: 0.6,
+        delay: 0.2,
         ease: "easeOut",
       },
     },
   }
 
   const titleVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  }
-
-  const descriptionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   }
 
+  const descriptionVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 },
+  }
+
   return (
-    <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start overflow-hidden">
       {/* Content Section */}
       <motion.div
         ref={contentRef}
         initial="hidden"
         animate={isContentInView ? "visible" : "hidden"}
         variants={contentVariants}
-        className={imagePosition === "right" ? "lg:order-1" : "lg:order-2"}
+        className={`w-full ${imagePosition === "right" ? "lg:order-1" : "lg:order-2"}`}
       >
-        <motion.h2 variants={titleVariants} className="text-4xl font-bold text-white mb-4">
+        <motion.h2 
+          variants={titleVariants} 
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4"
+        >
           {title}
         </motion.h2>
-        <motion.p variants={descriptionVariants} className="text-gray-300 mb-8 leading-relaxed">
+        <motion.p 
+          variants={descriptionVariants} 
+          className="text-gray-300 mb-6 lg:mb-8 leading-relaxed text-sm sm:text-base"
+        >
           {description}
         </motion.p>
 
-        <div className="space-y-0 mb-8 lg:mb-0">
+        <div className="space-y-0">
           {accordionItems.map((item, index) => (
             <AccordionItem
               key={item.key}
@@ -132,7 +150,7 @@ const ServiceSection = ({
               description={item.description}
               isOpen={openAccordions[item.key]}
               onToggle={() => toggleAccordion(item.key)}
-              delay={0.2 + index * 0.1}
+              delay={0.1 + index * 0.05}
             />
           ))}
         </div>
@@ -144,15 +162,15 @@ const ServiceSection = ({
         initial="hidden"
         animate={isImageInView ? "visible" : "hidden"}
         variants={imageVariants}
-        className={`flex justify-center items-center ${
+        className={`w-full flex justify-center items-center ${
           imagePosition === "right" ? "lg:order-2" : "lg:order-1"
-        } ${imagePosition === "left" ? "md:mt-3" : ""}`}
+        }`}
       >
-        <div className="p-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+        <div className="p-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg w-full max-w-md lg:max-w-lg">
           <img
             src={imageSrc || "https://via.placeholder.com/400x300"}
             alt={imageAlt}
-            className="rounded-lg object-cover h-110 w-full md:w-110 max-w-lg"
+            className="rounded-lg object-cover w-full h-64 sm:h-80 lg:h-96"
           />
         </div>
       </motion.div>
@@ -162,17 +180,21 @@ const ServiceSection = ({
 
 export default function AnimatedServicesSection() {
   const headerRef = useRef(null)
-  const isHeaderInView = useInView(headerRef, { once: true, margin: "-50px" })
+  const isHeaderInView = useInView(headerRef, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.3
+  })
 
   const headerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut",
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   }
@@ -313,31 +335,31 @@ export default function AnimatedServicesSection() {
   ]
 
   return (
-    <div id="our-services" className="bg-gray-900 min-h-screen py-20">
-      <div className="container mx-auto px-4">
+    <div id="our-services" className="bg-gray-900 min-h-screen py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={headerRef}
           initial="hidden"
           animate={isHeaderInView ? "visible" : "hidden"}
           variants={headerVariants}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <motion.h1
-            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-            className="text-5xl font-bold text-white mb-6"
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
             Our Services
           </motion.h1>
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed"
+            variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
+            className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4"
           >
             We craft world-class digital experiences that elevate your brand and drive results. From strategy to
             execution, we bring your vision to life with creativity and precision.
           </motion.p>
         </motion.div>
 
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {services.map((service, index) => (
             <ServiceSection
               key={service.title}

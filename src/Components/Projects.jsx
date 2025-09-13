@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 
 // --- DATA ---
 const projectData = [
@@ -80,18 +79,19 @@ const ProjectCard = ({ project, onClick, delay = 0 }) => {
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { 
         once: true, 
-        margin: "-100px 0px -100px 0px" 
+        margin: "-50px",
+        amount: 0.2
     });
 
     return (
         <motion.div 
             ref={cardRef}
-            initial={{ opacity: 0, y: 60, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.95 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
             transition={{
-                duration: 0.8,
+                duration: 0.6,
                 delay: delay,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: "easeOut"
             }}
             className="group relative overflow-hidden rounded-lg shadow-lg w-full h-full cursor-pointer"
             onClick={onClick}
@@ -109,12 +109,12 @@ const ProjectCard = ({ project, onClick, delay = 0 }) => {
                 src={project.imageUrl}
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={isInView ? { scale: 1 } : { scale: 1.1 }}
+                initial={{ scale: 1.05 }}
+                animate={isInView ? { scale: 1 } : { scale: 1.05 }}
                 transition={{ 
-                    duration: 1.2, 
-                    delay: delay + 0.2,
-                    ease: [0.25, 0.46, 0.45, 0.94]
+                    duration: 0.8, 
+                    delay: delay + 0.1,
+                    ease: "easeOut"
                 }}
                 whileHover={{ scale: 1.05 }}
             />
@@ -123,30 +123,30 @@ const ProjectCard = ({ project, onClick, delay = 0 }) => {
                 className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6, delay: delay + 0.4 }}
+                transition={{ duration: 0.4, delay: delay + 0.2 }}
             />
             
             <motion.div 
-                className="absolute bottom-0 left-0 right-0 p-5 text-white"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: delay + 0.6 }}
+                className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white"
+                initial={{ opacity: 0, y: 15 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+                transition={{ duration: 0.4, delay: delay + 0.3 }}
             >
                 <div className="flex justify-between items-end">
                     <div>
                         <motion.h3 
-                            className="text-xl font-bold mb-2"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                            transition={{ duration: 0.5, delay: delay + 0.8 }}
+                            className="text-lg sm:text-xl font-bold mb-2"
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                            transition={{ duration: 0.4, delay: delay + 0.4 }}
                         >
                             {project.subtitle}
                         </motion.h3>
                         <motion.p 
-                            className="text-md text-gray-300"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                            transition={{ duration: 0.5, delay: delay + 1.0 }}
+                            className="text-sm sm:text-md text-gray-300"
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                            transition={{ duration: 0.4, delay: delay + 0.5 }}
                         >
                             {project.date}
                         </motion.p>
@@ -164,56 +164,58 @@ export const ProjectsSection = () => {
     const sectionRef = useRef(null);
     const headerRef = useRef(null);
     const mainContentRef = useRef(null);
-    const navigate = useNavigate();
+    
     const isHeaderInView = useInView(headerRef, { 
         once: true, 
-        margin: "-50px 0px -50px 0px" 
+        margin: "-50px",
+        amount: 0.3
     });
     
     const isMainContentInView = useInView(mainContentRef, { 
         once: true, 
-        margin: "-100px 0px -100px 0px" 
+        margin: "-50px",
+        amount: 0.2
     });
 
     // Handle project selection and navigate to detail page
     const handleProjectSelect = (project) => {
         console.log(`Navigate to project/${project.id}`);
-        navigate(`/project/${project.id}`);
+        // navigate(`/project/${project.id}`);
     };
 
     const headerVariants = {
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.8,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                staggerChildren: 0.2,
+                duration: 0.6,
+                ease: "easeOut",
+                staggerChildren: 0.1,
             },
         },
     };
 
     const titleVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
-            y: 0,
-            transition: {
-                duration: 0.8,
-                ease: [0.25, 0.46, 0.45, 0.94]
-            }
-        }
-    };
-
-    const subtitleVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
             opacity: 1, 
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const subtitleVariants = {
+        hidden: { opacity: 0, y: 15 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
             }
         }
     };
@@ -222,36 +224,34 @@ export const ProjectsSection = () => {
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.3,
-                delayChildren: 0.2
+                staggerChildren: 0.2,
+                delayChildren: 0.1
             }
         }
     };
 
     const featuredCardVariants = {
-        hidden: { opacity: 0, x: -80, scale: 0.9 },
+        hidden: { opacity: 0, scale: 0.95 },
         visible: {
             opacity: 1,
-            x: 0,
             scale: 1,
             transition: {
-                duration: 1.0,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 0.6,
+                ease: "easeOut"
             }
         }
     };
 
     const sideCardsVariants = {
-        hidden: { opacity: 0, x: 80, scale: 0.9 },
+        hidden: { opacity: 0, scale: 0.95 },
         visible: {
             opacity: 1,
-            x: 0,
             scale: 1,
             transition: {
-                duration: 1.0,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                staggerChildren: 0.2,
-                delayChildren: 0.3
+                duration: 0.6,
+                ease: "easeOut",
+                staggerChildren: 0.1,
+                delayChildren: 0.2
             }
         }
     };
@@ -260,89 +260,91 @@ export const ProjectsSection = () => {
         <motion.div 
             id='ourprojects' 
             ref={sectionRef} 
-            className="w-full px-4 py-16 sm:py-24 bg-black text-white"
+            className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-black text-white overflow-x-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
         >
-            {/* Header Section */}
-            <motion.div 
-                ref={headerRef}
-                className="text-center mb-16"
-                initial="hidden"
-                animate={isHeaderInView ? "visible" : "hidden"}
-                variants={headerVariants}
-            >
-                <motion.h1 
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
-                    variants={titleVariants}
-                >
-                    Our Projects
-                </motion.h1>
-                <motion.p 
-                    className="text-[#B5B6B6] text-lg sm:text-xl"
-                    variants={subtitleVariants}
-                >
-                    A showcase of our passion and commitment to excellence.
-                </motion.p>
-            </motion.div>
-
-            {/* Projects Grid */}
-            <motion.div 
-                ref={mainContentRef}
-                className="flex flex-col lg:flex-row gap-8"
-                initial="hidden"
-                animate={isMainContentInView ? "visible" : "hidden"}
-                variants={containerVariants}
-            >
-                {/* Featured Project */}
+            <div className="container mx-auto max-w-7xl">
+                {/* Header Section */}
                 <motion.div 
-                    className="lg:w-1/2"
-                    variants={featuredCardVariants}
+                    ref={headerRef}
+                    className="text-center mb-12 sm:mb-16"
+                    initial="hidden"
+                    animate={isHeaderInView ? "visible" : "hidden"}
+                    variants={headerVariants}
                 >
-                    {featuredProject && (
-                        <div className="h-[34rem]">
-                            <ProjectCard 
-                                project={featuredProject} 
-                                onClick={() => handleProjectSelect(featuredProject)}
-                                delay={0}
-                            />
-                        </div>
-                    )}
+                    <motion.h1 
+                        className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4"
+                        variants={titleVariants}
+                    >
+                        Our Projects
+                    </motion.h1>
+                    <motion.p 
+                        className="text-[#B5B6B6] text-base sm:text-lg lg:text-xl px-4"
+                        variants={subtitleVariants}
+                    >
+                        A showcase of our passion and commitment to excellence.
+                    </motion.p>
                 </motion.div>
 
-                {/* Other Projects */}
+                {/* Projects Grid */}
                 <motion.div 
-                    className="lg:w-1/2 flex flex-col gap-8"
-                    variants={sideCardsVariants}
+                    ref={mainContentRef}
+                    className="flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-hidden"
+                    initial="hidden"
+                    animate={isMainContentInView ? "visible" : "hidden"}
+                    variants={containerVariants}
                 >
-                    {otherProjects.map((project, index) => (
-                       <motion.div 
-                           className="h-64" 
-                           key={project.id}
-                           variants={{
-                               hidden: { opacity: 0, y: 60, scale: 0.95 },
-                               visible: {
-                                   opacity: 1,
-                                   y: 0,
-                                   scale: 1,
-                                   transition: {
-                                       duration: 0.8,
-                                       delay: index * 0.2,
-                                       ease: [0.25, 0.46, 0.45, 0.94]
+                    {/* Featured Project */}
+                    <motion.div 
+                        className="w-full lg:w-1/2"
+                        variants={featuredCardVariants}
+                    >
+                        {featuredProject && (
+                            <div className="h-80 sm:h-96 lg:h-[34rem]">
+                                <ProjectCard 
+                                    project={featuredProject} 
+                                    onClick={() => handleProjectSelect(featuredProject)}
+                                    delay={0}
+                                />
+                            </div>
+                        )}
+                    </motion.div>
+
+                    {/* Other Projects */}
+                    <motion.div 
+                        className="w-full lg:w-1/2 flex flex-col gap-6 lg:gap-8"
+                        variants={sideCardsVariants}
+                    >
+                        {otherProjects.map((project, index) => (
+                           <motion.div 
+                               className="h-48 sm:h-56 lg:h-64" 
+                               key={project.id}
+                               variants={{
+                                   hidden: { opacity: 0, y: 30, scale: 0.95 },
+                                   visible: {
+                                       opacity: 1,
+                                       y: 0,
+                                       scale: 1,
+                                       transition: {
+                                           duration: 0.6,
+                                           delay: index * 0.1,
+                                           ease: "easeOut"
+                                       }
                                    }
-                               }
-                           }}
-                       >
-                           <ProjectCard 
-                               project={project} 
-                               onClick={() => handleProjectSelect(project)}
-                               delay={index * 0.1}
-                           />
-                       </motion.div>
-                    ))}
+                               }}
+                           >
+                               <ProjectCard 
+                                   project={project} 
+                                   onClick={() => handleProjectSelect(project)}
+                                   delay={index * 0.05}
+                               />
+                           </motion.div>
+                        ))}
+                    </motion.div>
                 </motion.div>
-            </motion.div>
+            </div>
         </motion.div>
     );
 };

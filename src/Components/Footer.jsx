@@ -305,106 +305,86 @@ export default function Footer() {
       </motion.section>
 
       {/* Main Footer with Heavy Animations */}
-      <motion.footer 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-        className="relative z-10 bg-black text-white py-16 px-6 md:pt-50"
-      >
+     <div    className="relative z-10 bg-black text-white py-16 px-6 md:pt-50" >
+
+
         <div className="max-w-7xl mx-auto">
           {/* Desktop Layout */}
           <div className="hidden md:grid md:grid-cols-4 gap-12">
             <div className="flex justify-between gap-100">
               {/* Company Info */}
-              <motion.div 
-                variants={slideInLeft}
+              <div 
                 className="md:col-span-1 ml-10"
               >
-                <motion.div 
-                  variants={scaleIn}
-                  transition={{ delay: 0.2 }}
+                <div 
                   className="flex items-center gap-2 mb-6"
                 >
                   <div className="flex items-center gap-2">
                    
-                    <motion.span 
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5, duration: 0.8 }}
+                    <span 
+                    
                       className="text-white font-bold text-xl"
                     >
                   <img src="/Images/footerlogo.webp" className="  h-15"  />
-                    </motion.span>
+                    </span>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div 
-                  variants={fadeInUp}
-                  transition={{ delay: 0.4 }}
+                <div 
+               
                   className="space-y-2 text-gray-300 text-sm"
                 >
                   {["Location(Lahore, Pakistan)"].map((line, index) => (
-                    <motion.p
+                    <p
                       key={index}
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
+                     
                     >
                       {line}
-                    </motion.p>
+                    </p>
                   ))}
-                </motion.div>
+                </div>
 
-                <motion.div 
+                <div 
                   variants={fadeInUp}
                   transition={{ delay: 0.8 }}
                   className="mt-6 space-y-2"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.6 }}
+                  <div
+                 
                   >
                     <span className="text-gray-400 text-sm">Phone number</span>
-                    <motion.p 
+                    <p 
                       whileHover={{ scale: 1.05, color: "#10b981" }}
                       className="text-white cursor-pointer"
                     >
                       +92 3290303391
-                    </motion.p>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.6 }}
+                    </p>
+                  </div>
+                  <div
+                 
                   >
                     <span className="text-gray-400 text-sm">Email</span>
-                    <motion.p 
+                    <p 
                       whileHover={{ scale: 1.05, color: "#10b981" }}
                       className="text-white cursor-pointer"
                     >
                      devzonesoftwarehouse@gmail.com
-                    </motion.p>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               <div className="flex gap-60">
                 {/* Quick Links */}
-                <motion.div
-                  variants={fadeInUp}
-                  transition={{ delay: 0.6 }}
+                <div
                   className=" whitespace-nowrap"
                 >
-                  <motion.h3 
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.6 }}
+                  <h3 
+                   
                     className="text-white font-medium mb-6"
                   >
                     Quick links
-                  </motion.h3>
+                  </h3>
                   <ul className="space-y-3">
                     {[
                       { to: "/pricing", label: "Services" },
@@ -412,39 +392,34 @@ export default function Footer() {
                       { to: "/about", label: "About us" },
                       { to: "/contact", label: "Contact us" }
                     ].map((link, index) => (
-                      <motion.li
+                      <li
                         key={link.to}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
+                     
                         
                       >
-                        <motion.a
+                        <a
                           href={link.to}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                         >
                           {link.label}
-                        </motion.a>
-                      </motion.li>
+                        </a>
+                      </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
 
                 {/* Social */}
-                <motion.div
-                  variants={fadeInUp}
-                  transition={{ delay: 0.8 }}
+                <div
+                 
                 >
-                  <motion.h3 
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.6 }}
+                  <h3 
+                   
                     className="text-white font-medium mb-6"
                   >
                     Social
-                  </motion.h3>
+                  </h3>
                   <ul className="space-y-3">
                     {[
                       { to: "/facebook", label: "Facebook" },
@@ -452,24 +427,22 @@ export default function Footer() {
                       { to: "https://www.linkedin.com/company/devzone-software/?viewAsMember=true", label: "LinkedIn" },
                       { to: "https://api.whatsapp.com/send/?phone=923290303391&text&type=phone_number&app_absent=0", label: "Whatsapp" }
                     ].map((link, index) => (
-                      <motion.li
+                      <li
                         key={link.to}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.2 + index * 0.1, duration: 0.6 }}
+                       
                       >
-                        <motion.a
+                        <a
                           href={link.to}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                         >
                           {link.label}
-                        </motion.a>
-                      </motion.li>
+                        </a>
+                      </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
@@ -477,92 +450,79 @@ export default function Footer() {
           {/* Mobile Layout with Heavy Animations */}
           <div className="md:hidden space-y-4">
             {/* Company Info */}
-            <motion.div 
-              variants={slideInLeft}
+            <div 
               className="mb-8"
             >
-              <motion.div 
-                variants={scaleIn}
+              <div 
                 className="flex items-center gap-2 mb-6"
               >
                 <div className="flex items-center gap-2">
                 
-                  <motion.span 
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
+                  <span 
+                   
                     className="text-white font-bold text-xl"
                   >
                     <img src="/Images/footerlogo.webp" className="  h-15"  />
-                  </motion.span>
+                  </span>
                 </div>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                variants={fadeInUp}
-                transition={{ delay: 0.4 }}
+              <div 
+            
                 className="space-y-2 text-gray-300 text-sm"
               >
                 {["20619 Torrence Chapel Rd", "Suite 116 #1040", "Cornelius, NC 28031", "United States"].map((line, index) => (
-                  <motion.p
+                  <p
                     key={index}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
+                    
                   >
                     {line}
-                  </motion.p>
+                  </p>
                 ))}
-              </motion.div>
+              </div>
               
-              <motion.div 
-                variants={fadeInUp}
-                transition={{ delay: 0.8 }}
+              <div 
+              
                 className="mt-6 space-y-2"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.6 }}
+                <div
+               
                 >
                   <span className="text-gray-400 mb-2 text-sm">Phone number</span>
-                  <motion.p 
+                  <p 
                     whileHover={{ scale: 1.05, color: "#10b981" }}
                     className="text-white"
                   >
                  +92 3290303391
-                  </motion.p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.6 }}
+                  </p>
+                </div>
+                <div
+                
                 >
                   <span className="text-gray-400 mb-2 text-sm">Email</span>
-                  <motion.p 
+                  <p 
                     whileHover={{ scale: 1.05, color: "#10b981" }}
                     className="text-white"
                   >
                    devzonesoftwarehouse@gmail.com
-                  </motion.p>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/* Quick Links Accordion */}
-            <motion.div 
-              variants={fadeInUp}
-              transition={{ delay: 0.5 }}
+            <div 
+            
               className="border-b border-gray-800 pb-4"
             >
-              <motion.button
+              <button
                 onClick={() => toggleSection("quickLinks")}
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center justify-between w-full text-left"
               >
                 <h3 className="text-white font-medium text-lg">Quick Links</h3>
-                <motion.div
+                <div
                   animate={{ rotate: openSections.quickLinks ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -571,11 +531,11 @@ export default function Footer() {
                   ) : (
                     <ChevronDown className="h-5 w-5 text-gray-400" />
                   )}
-                </motion.div>
-              </motion.button>
+                </div>
+              </button>
               <AnimatePresence>
                 {openSections.quickLinks && (
-                  <motion.ul
+                  <ul
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -588,41 +548,41 @@ export default function Footer() {
                       { to: "/about", label: "About us" },
                       { to: "/contact", label: "Contact us" }
                     ].map((link, index) => (
-                      <motion.li
+                      <li
                         key={link.to}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                       >
-                        <motion.a
+                        <a
                           href={link.to}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                         >
                           {link.label}
-                        </motion.a>
-                      </motion.li>
+                        </a>
+                      </li>
                     ))}
-                  </motion.ul>
+                  </ul>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
 
             {/* Social Accordion */}
-            <motion.div 
+            <div 
               variants={fadeInUp}
               transition={{ delay: 0.7 }}
               className="border-b border-gray-800 pb-4"
             >
-              <motion.button
+              <button
                 onClick={() => toggleSection("social")}
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center justify-between w-full text-left"
               >
                 <h3 className="text-white font-medium text-lg">Social</h3>
-                <motion.div
+                <div
                   animate={{ rotate: openSections.social ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -631,11 +591,11 @@ export default function Footer() {
                   ) : (
                     <ChevronDown className="h-5 w-5 text-gray-400" />
                   )}
-                </motion.div>
-              </motion.button>
+                </div>
+              </button>
               <AnimatePresence>
                 {openSections.social && (
-                  <motion.ul
+                  <ul
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -648,40 +608,38 @@ export default function Footer() {
                       { to: "/linkedin", label: "LinkedIn" },
                       { to: "/twitter", label: "Whatsapp" },
                     ].map((link, index) => (
-                      <motion.li
+                      <li
                         key={link.to}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                       >
-                        <motion.a
+                        <a
                           href={link.to}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                         >
                           {link.label}
-                        </motion.a>
-                      </motion.li>
+                        </a>
+                      </li>
                     ))}
-                  </motion.ul>
+                  </ul>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           </div>
 
           {/* Copyright with Animation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 1.5, duration: 0.8 }}
+          <div 
+          
             className="mt-12"
           >
             
-          </motion.div>
+          </div>
+               </div>
         </div>
-      </motion.footer>
+      
     </div>
   )
 }

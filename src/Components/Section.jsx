@@ -19,7 +19,7 @@ const Section = () => {
          
         <div className='mt-10' >
 
-      <Testimonials/>
+      {/* <Testimonials/> */}
         </div>
         <Footer/>
       
