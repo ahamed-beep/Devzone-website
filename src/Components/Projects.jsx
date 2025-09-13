@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 // --- DATA ---
 const projectData = [
@@ -163,7 +164,7 @@ export const ProjectsSection = () => {
     const sectionRef = useRef(null);
     const headerRef = useRef(null);
     const mainContentRef = useRef(null);
-    
+    const navigate = useNavigate();
     const isHeaderInView = useInView(headerRef, { 
         once: true, 
         margin: "-50px 0px -50px 0px" 
@@ -177,7 +178,7 @@ export const ProjectsSection = () => {
     // Handle project selection and navigate to detail page
     const handleProjectSelect = (project) => {
         console.log(`Navigate to project/${project.id}`);
-        // navigate(`/project/${project.id}`);
+        navigate(`/project/${project.id}`);
     };
 
     const headerVariants = {

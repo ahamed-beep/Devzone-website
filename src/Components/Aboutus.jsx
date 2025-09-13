@@ -39,7 +39,7 @@ const AnimatedAbout = () => {
           <AnimatedSection>
             <section className="relative bg-gray-100 h-94 flex items-center justify-center">
               <div className="absolute inset-0">
-                <img src="/Images/about.jpeg" alt="workspace" className="w-full h-full object-center object-cover" />
+                <img src="/Images/about.webp" alt="workspace" className="w-full h-full object-center object-cover" />
               </div>
               <motion.div
                 className="relative text-center text-white bg-white/30 backdrop-blur-md px-10 py-14 rounded-xl"

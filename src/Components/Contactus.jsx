@@ -160,13 +160,13 @@ const Contact = () => {
         />
 
         <motion.div
-          className="relative text-start text-white px-4 z-10"
+          className="relative justify-start text-start text-white px-4 z-10"
           variants={containerVariants}
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
         >
           <motion.h1
-            className="text-6xl font-bold"
+            className="  text-4xl  md:text-6xl font-bold"
             variants={itemVariants}
             whileHover={{
               scale: 1.05,
