@@ -20,7 +20,7 @@ const teamMembers = [
     id: 4,
     name: "Abdul Ahad",
     role: "Full Stack Developer",
-  image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/professional-man-with-beard-in-blue-shirt-FoVeOWcGYxeO4E1a8ivk37mCQpHlph.jpg",
+  image: "/Images/ahad3.webp",
   },
 ];
 

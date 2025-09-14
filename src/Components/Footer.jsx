@@ -18,6 +18,32 @@ export default function Footer() {
     }))
   }
 
+  // Smooth scroll function
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault()
+    
+    // If it's an external link, just navigate normally
+    if (targetId.startsWith('http') || targetId.startsWith('/')) {
+      if (targetId.startsWith('/')) {
+        window.location.href = targetId
+      } else {
+        window.open(targetId, '_blank')
+      }
+      return
+    }
+
+    // Handle smooth scrolling for anchor links
+    if (targetId.startsWith('#')) {
+      const element = document.querySelector(targetId)
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+  }
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -235,7 +261,7 @@ export default function Footer() {
                           transition={{ delay: 1.5, duration: 1 }}
                           className="absolute inset-0"
                         >
-                          <img src="/Images/footer.jpeg" alt="" />
+                          <img src="/Images/footer.webp" alt="" />
                         </motion.div>
                       </div>
                     </div>
@@ -359,8 +385,8 @@ export default function Footer() {
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      { to: "/pricing", label: "Services" },
-                      { to: "/resources", label: "Projects" },
+                      { to: "#our-services", label: "Services" },
+                      { to: "#ourprojects", label: "Projects" },
                       { to: "/about", label: "About us" },
                       { to: "/contact", label: "Contact us" }
                     ].map((link, index) => (
@@ -371,6 +397,7 @@ export default function Footer() {
                       >
                         <a
                           href={link.to}
+                          onClick={(e) => handleSmoothScroll(e, link.to)}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
@@ -405,6 +432,7 @@ export default function Footer() {
                       >
                         <a
                           href={link.to}
+                          onClick={(e) => handleSmoothScroll(e, link.to)}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
@@ -443,7 +471,7 @@ export default function Footer() {
             
                 className="space-y-2 text-gray-300 text-sm"
               >
-                {["20619 Torrence Chapel Rd", "Suite 116 #1040", "Cornelius, NC 28031", "United States"].map((line, index) => (
+                {["Location(Lahore, Pakistan)"].map((line, index) => (
                   <p
                     key={index}
                     
@@ -515,8 +543,8 @@ export default function Footer() {
                     className="overflow-hidden mt-4 space-y-3 pl-4"
                   >
                     {[
-                      { to: "/pricing", label: "Services" },
-                      { to: "/resources", label: "Projects" },
+                      { to: "#our-services", label: "Services" },
+                      { to: "#ourprojects", label: "Projects" },
                       { to: "/about", label: "About us" },
                       { to: "/contact", label: "Contact us" }
                     ].map((link, index) => (
@@ -528,6 +556,7 @@ export default function Footer() {
                       >
                         <a
                           href={link.to}
+                          onClick={(e) => handleSmoothScroll(e, link.to)}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"
@@ -588,6 +617,7 @@ export default function Footer() {
                       >
                         <a
                           href={link.to}
+                          onClick={(e) => handleSmoothScroll(e, link.to)}
                           variants={linkHover}
                           whileHover="hover"
                           className="text-gray-300 hover:text-white transition-colors cursor-pointer"

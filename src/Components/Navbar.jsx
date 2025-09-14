@@ -13,6 +13,7 @@ import {
   Eye,
   AlertTriangle,
   Search,
+  Lock,
 } from "lucide-react"
 import MobileNavbar from "./MobileNavbar"
 import { Link } from "react-router-dom"
@@ -43,37 +44,43 @@ export default function Navbar() {
           name: "About Us",
           description: "Learn about our company and mission",
           icon: <Users className="w-5 h-5" />,
-          link: "/about"
+          link: "/about",
+          isLocked: false // This one is unlocked
         },
         {
           name: "Our Team",
           description: "Meet our expert team members",
-          icon: <Users className="w-5 h-5" />,
-          link: "/our-team"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Company History",
           description: "Our journey and milestones",
-          icon: <FileText className="w-5 h-5" />,
-          link: "/company-history"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Mission & Vision",
           description: "Our vision for the future",
-          icon: <TrendingUp className="w-5 h-5" />,
-          link: "/mission-vision"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Leadership",
           description: "Meet our executive leadership team",
-          icon: <Users className="w-5 h-5" />,
-          link: "/leadership"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Careers",
           description: "Join our growing team",
-          icon: <Search className="w-5 h-5" />,
-          link: "/careers"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
       ],
     },
@@ -84,56 +91,65 @@ export default function Navbar() {
         {
           name: "Brand Reputation Auditing",
           description: "Never miss an important conversation about your brand again",
-          icon: <Eye className="w-5 h-5" />,
-          link: "/services/brand-reputation-auditing"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Social Media Lead Generation",
           description: "Generate more leads from social media with impressive conversion rates",
-          icon: <TrendingUp className="w-5 h-5" />,
-          link: "/services/social-media-lead-generation"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Influencer Marketing",
           description: "Connect with top influencers who your customers love",
-          icon: <Users className="w-5 h-5" />,
-          link: "/services/influencer-marketing"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Campaign Measurement",
           description: "Measure your marketing campaigns with unparalleled precision and detail",
-          icon: <BarChart3 className="w-5 h-5" />,
-          link: "/services/campaign-measurement"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Customer Care",
           description: "Take your customer satisfaction performance to the next level",
-          icon: <HeadphonesIcon className="w-5 h-5" />,
-          link: "/services/customer-care"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Content Strategy",
           description: "Deliver top-notch content that generates traffic and sales",
-          icon: <FileText className="w-5 h-5" />,
-          link: "/services/content-strategy"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Competitor Insights",
           description: "Stay ahead of the competition—all the time",
-          icon: <Search className="w-5 h-5" />,
-          link: "/services/competitor-insights"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Crisis Management",
           description: "Detect and fix problems before they become a pain",
-          icon: <AlertTriangle className="w-5 h-5" />,
-          link: "/services/crisis-management"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Market Research",
           description: "Gain access to never-before-seen social media insights for your brand",
-          icon: <MessageCircle className="w-5 h-5" />,
-          link: "/services/market-research"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
       ],
     },
@@ -144,38 +160,44 @@ export default function Navbar() {
         {
           name: "Partnership Program",
           description: "Join our partner network and grow together",
-          icon: <Users className="w-5 h-5" />,
-          link: "/work-with-us/partnership-program"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Consulting Services",
           description: "Get expert guidance for your business",
-          icon: <MessageCircle className="w-5 h-5" />,
-          link: "/work-with-us/consulting-services"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Custom Solutions",
           description: "Tailored solutions for your unique needs",
-          icon: <BarChart3 className="w-5 h-5" />,
-          link: "/work-with-us/custom-solutions"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Enterprise Support",
           description: "Dedicated support for enterprise clients",
-          icon: <HeadphonesIcon className="w-5 h-5" />,
-          link: "/work-with-us/enterprise-support"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Training Programs",
           description: "Comprehensive training for your team",
-          icon: <FileText className="w-5 h-5" />,
-          link: "/work-with-us/training-programs"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Implementation",
           description: "Full implementation and setup services",
-          icon: <TrendingUp className="w-5 h-5" />,
-          link: "/work-with-us/implementation"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
       ],
     },
@@ -186,42 +208,56 @@ export default function Navbar() {
         {
           name: "News & Updates",
           description: "Latest company news and announcements",
-          icon: <FileText className="w-5 h-5" />,
-          link: "/company/news-updates"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Blog",
           description: "Industry insights and expert articles",
-          icon: <MessageCircle className="w-5 h-5" />,
-          link: "/company/blog"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Case Studies",
           description: "Success stories from our clients",
-          icon: <BarChart3 className="w-5 h-5" />,
-          link: "/company/case-studies"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Resources",
           description: "Helpful guides and documentation",
-          icon: <Search className="w-5 h-5" />,
-          link: "/company/resources"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Events",
           description: "Upcoming webinars and conferences",
-          icon: <TrendingUp className="w-5 h-5" />,
-          link: "/company/events"
+          icon: <Lock className="w-5 h-5" />,
+          link: "#",
+          isLocked: true
         },
         {
           name: "Contact",
           description: "Get in touch with our team",
           icon: <HeadphonesIcon className="w-5 h-5" />,
-          link: "/contact"
+          link: "/contact",
+          isLocked: false // This one is unlocked
         },
       ],
     },
   ]
+
+  const handleDropdownItemClick = (dropdownItem, e) => {
+    if (dropdownItem.isLocked) {
+      e.preventDefault()
+      return false
+    }
+    setActiveDropdown(null)
+  }
 
   return (
     <div>
@@ -338,40 +374,69 @@ export default function Navbar() {
                           <div className="max-w-7xl mx-auto px-8 py-12">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
                               {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                                <Link
-                                  key={dropdownItem.name}
-                                  to={dropdownItem.link}
-                                  className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                      duration: 0.3,
-                                      delay: 0.05 * dropdownIndex,
-                                      ease: "easeOut",
-                                    }}
-                                    whileHover={{
-                                      scale: 1.02,
-                                    }}
-                                    className="w-full flex items-start gap-4"
+                                dropdownItem.isLocked ? (
+                                  <div
+                                    key={dropdownItem.name}
+                                    className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed"
                                   >
                                     <motion.div
-                                      className="text-blue-600 group-hover:text-blue-700 mt-1 flex-shrink-0"
-                                      whileHover={{ scale: 1.1, rotate: 5 }}
-                                      transition={{ duration: 0.2 }}
+                                      initial={{ opacity: 0, y: 20 }}
+                                      animate={{ opacity: 1, y: 0 }}
+                                      transition={{
+                                        duration: 0.3,
+                                        delay: 0.05 * dropdownIndex,
+                                        ease: "easeOut",
+                                      }}
+                                      className="w-full flex items-start gap-4"
                                     >
-                                      {dropdownItem.icon}
+                                      <div className="text-gray-400 mt-1 flex-shrink-0">
+                                        {dropdownItem.icon}
+                                      </div>
+                                      <div className="flex-1">
+                                        <h3 className="font-semibold text-gray-500 text-sm mb-1 flex items-center gap-2">
+                                          {dropdownItem.name}
+                                          <span className="text-xs bg-gray-200 px-2 py-1 rounded">Coming Soon</span>
+                                        </h3>
+                                        <p className="text-xs text-gray-400 leading-relaxed">{dropdownItem.description}</p>
+                                      </div>
                                     </motion.div>
-                                    <div className="flex-1">
-                                      <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-blue-900">
-                                        {dropdownItem.name}
-                                      </h3>
-                                      <p className="text-xs text-gray-600 leading-relaxed">{dropdownItem.description}</p>
-                                    </div>
-                                  </motion.div>
-                                </Link>
+                                  </div>
+                                ) : (
+                                  <Link
+                                    key={dropdownItem.name}
+                                    to={dropdownItem.link}
+                                    className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                                    onClick={(e) => handleDropdownItemClick(dropdownItem, e)}
+                                  >
+                                    <motion.div
+                                      initial={{ opacity: 0, y: 20 }}
+                                      animate={{ opacity: 1, y: 0 }}
+                                      transition={{
+                                        duration: 0.3,
+                                        delay: 0.05 * dropdownIndex,
+                                        ease: "easeOut",
+                                      }}
+                                      whileHover={{
+                                        scale: 1.02,
+                                      }}
+                                      className="w-full flex items-start gap-4"
+                                    >
+                                      <motion.div
+                                        className="text-blue-600 group-hover:text-blue-700 mt-1 flex-shrink-0"
+                                        whileHover={{ scale: 1.1, rotate: 5 }}
+                                        transition={{ duration: 0.2 }}
+                                      >
+                                        {dropdownItem.icon}
+                                      </motion.div>
+                                      <div className="flex-1">
+                                        <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-blue-900">
+                                          {dropdownItem.name}
+                                        </h3>
+                                        <p className="text-xs text-gray-600 leading-relaxed">{dropdownItem.description}</p>
+                                      </div>
+                                    </motion.div>
+                                  </Link>
+                                )
                               ))}
                             </div>
                           </div>

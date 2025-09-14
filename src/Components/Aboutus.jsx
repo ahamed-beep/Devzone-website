@@ -117,7 +117,7 @@ const AnimatedAbout = () => {
                 We’re on the lookout for passionate and creative minds who want to make an impact through technology. Here, you’ll find an environment that values innovation, teamwork, and personal growth. Together, we take on challenges, build solutions that matter, and grow stronger every day.
                 </p>
                 <motion.button
-                  className="mt-4 font-bold rounded-lg hover:bg-gradient-to-r from-cyan-500 to-teal-500 text-transparent  "
+                  className="mt-4 font-bold rounded-lg text-black   "
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

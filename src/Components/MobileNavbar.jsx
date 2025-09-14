@@ -16,6 +16,7 @@ import {
   Eye,
   AlertTriangle,
   Search,
+  Lock,
 } from "lucide-react"
 import { Link } from "react-router-dom"
 
@@ -37,51 +38,213 @@ export default function MobileNavbar() {
       name: "Who We Are",
       hasDropdown: true,
       dropdownItems: [
-        { name: "About Us", path: "/about", description: "Learn about our company and mission", icon: <Users className="w-5 h-5" /> },
-        { name: "Our Team", path: "/our-team", description: "Meet our expert team members", icon: <Users className="w-5 h-5" /> },
-        { name: "Company History", path: "/company-history", description: "Our journey and milestones", icon: <FileText className="w-5 h-5" /> },
-        { name: "Mission & Vision", path: "/mission-vision", description: "Our vision for the future", icon: <TrendingUp className="w-5 h-5" /> },
-        { name: "Leadership", path: "/leadership", description: "Meet our executive leadership team", icon: <Users className="w-5 h-5" /> },
-        { name: "Careers", path: "/careers", description: "Join our growing team", icon: <Search className="w-5 h-5" /> },
+        { 
+          name: "About Us", 
+          path: "/about", 
+          description: "Learn about our company and mission", 
+          icon: <Users className="w-5 h-5" />,
+          isLocked: false // This one is unlocked
+        },
+        { 
+          name: "Our Team", 
+          path: "#", 
+          description: "Meet our expert team members", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Company History", 
+          path: "#", 
+          description: "Our journey and milestones", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Mission & Vision", 
+          path: "#", 
+          description: "Our vision for the future", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Leadership", 
+          path: "#", 
+          description: "Meet our executive leadership team", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Careers", 
+          path: "#", 
+          description: "Join our growing team", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
       ],
     },
     {
       name: "Services",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Brand Reputation Auditing", path: "/brand-reputation-auditing", description: "Never miss an important conversation about your brand again", icon: <Eye className="w-5 h-5" /> },
-        { name: "Social Media Lead Generation", path: "/social-media-lead-generation", description: "Generate more leads from social media with impressive conversion rates", icon: <TrendingUp className="w-5 h-5" /> },
-        { name: "Influencer Marketing", path: "/influencer-marketing", description: "Connect with top influencers who your customers love", icon: <Users className="w-5 h-5" /> },
-        { name: "Campaign Measurement", path: "/campaign-measurement", description: "Measure your marketing campaigns with unparalleled precision and detail", icon: <BarChart3 className="w-5 h-5" /> },
-        { name: "Customer Care", path: "/customer-care", description: "Take your customer satisfaction performance to the next level", icon: <HeadphonesIcon className="w-5 h-5" /> },
-        { name: "Content Strategy", path: "/content-strategy", description: "Deliver top-notch content that generates traffic and sales", icon: <FileText className="w-5 h-5" /> },
-        { name: "Competitor Insights", path: "/competitor-insights", description: "Stay ahead of the competition—all the time", icon: <Search className="w-5 h-5" /> },
-        { name: "Crisis Management", path: "/crisis-management", description: "Detect and fix problems before they become a pain", icon: <AlertTriangle className="w-5 h-5" /> },
-        { name: "Market Research", path: "/market-research", description: "Gain access to never-before-seen social media insights for your brand", icon: <MessageCircle className="w-5 h-5" /> },
+        { 
+          name: "Brand Reputation Auditing", 
+          path: "#", 
+          description: "Never miss an important conversation about your brand again", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Social Media Lead Generation", 
+          path: "#", 
+          description: "Generate more leads from social media with impressive conversion rates", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Influencer Marketing", 
+          path: "#", 
+          description: "Connect with top influencers who your customers love", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Campaign Measurement", 
+          path: "#", 
+          description: "Measure your marketing campaigns with unparalleled precision and detail", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Customer Care", 
+          path: "#", 
+          description: "Take your customer satisfaction performance to the next level", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Content Strategy", 
+          path: "#", 
+          description: "Deliver top-notch content that generates traffic and sales", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Competitor Insights", 
+          path: "#", 
+          description: "Stay ahead of the competition—all the time", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Crisis Management", 
+          path: "#", 
+          description: "Detect and fix problems before they become a pain", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Market Research", 
+          path: "#", 
+          description: "Gain access to never-before-seen social media insights for your brand", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
       ],
     },
     {
       name: "Work With Us",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Partnership Program", path: "/partnership-program", description: "Join our partner network and grow together", icon: <Users className="w-5 h-5" /> },
-        { name: "Consulting Services", path: "/consulting-services", description: "Get expert guidance for your business", icon: <MessageCircle className="w-5 h-5" /> },
-        { name: "Custom Solutions", path: "/custom-solutions", description: "Tailored solutions for your unique needs", icon: <BarChart3 className="w-5 h-5" /> },
-        { name: "Enterprise Support", path: "/enterprise-support", description: "Dedicated support for enterprise clients", icon: <HeadphonesIcon className="w-5 h-5" /> },
-        { name: "Training Programs", path: "/training-programs", description: "Comprehensive training for your team", icon: <FileText className="w-5 h-5" /> },
-        { name: "Implementation", path: "/implementation", description: "Full implementation and setup services", icon: <TrendingUp className="w-5 h-5" /> },
+        { 
+          name: "Partnership Program", 
+          path: "#", 
+          description: "Join our partner network and grow together", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Consulting Services", 
+          path: "#", 
+          description: "Get expert guidance for your business", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Custom Solutions", 
+          path: "#", 
+          description: "Tailored solutions for your unique needs", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Enterprise Support", 
+          path: "#", 
+          description: "Dedicated support for enterprise clients", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Training Programs", 
+          path: "#", 
+          description: "Comprehensive training for your team", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Implementation", 
+          path: "#", 
+          description: "Full implementation and setup services", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
       ],
     },
     {
       name: "Company",
       hasDropdown: true,
       dropdownItems: [
-        { name: "News & Updates", path: "/news-updates", description: "Latest company news and announcements", icon: <FileText className="w-5 h-5" /> },
-        { name: "Blog", path: "/blog", description: "Industry insights and expert articles", icon: <MessageCircle className="w-5 h-5" /> },
-        { name: "Case Studies", path: "/case-studies", description: "Success stories from our clients", icon: <BarChart3 className="w-5 h-5" /> },
-        { name: "Resources", path: "/resources", description: "Helpful guides and documentation", icon: <Search className="w-5 h-5" /> },
-        { name: "Events", path: "/events", description: "Upcoming webinars and conferences", icon: <TrendingUp className="w-5 h-5" /> },
-        { name: "Contact", path: "/contact", description: "Get in touch with our team", icon: <HeadphonesIcon className="w-5 h-5" /> },
+        { 
+          name: "News & Updates", 
+          path: "#", 
+          description: "Latest company news and announcements", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Blog", 
+          path: "#", 
+          description: "Industry insights and expert articles", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Case Studies", 
+          path: "#", 
+          description: "Success stories from our clients", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Resources", 
+          path: "#", 
+          description: "Helpful guides and documentation", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Events", 
+          path: "#", 
+          description: "Upcoming webinars and conferences", 
+          icon: <Lock className="w-5 h-5" />,
+          isLocked: true
+        },
+        { 
+          name: "Contact", 
+          path: "/contact", 
+          description: "Get in touch with our team", 
+          icon: <HeadphonesIcon className="w-5 h-5" />,
+          isLocked: false // This one is unlocked
+        },
       ],
     },
   ]
@@ -100,6 +263,14 @@ export default function MobileNavbar() {
   const handleClose = () => {
     setIsOpen(false)
     setActiveSubmenu(null)
+  }
+
+  const handleSubItemClick = (subItem, e) => {
+    if (subItem.isLocked) {
+      e.preventDefault()
+      return false
+    }
+    handleClose()
   }
 
   return (
@@ -231,23 +402,40 @@ export default function MobileNavbar() {
                           transition={{ delay: index * 0.05 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <Link
-                            to={subItem.path}
-                            className="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50"
-                            onClick={handleClose}
-                          >
-                            <div className="text-blue-600 mt-1 flex-shrink-0">
-                              {subItem.icon}
+                          {subItem.isLocked ? (
+                            <div className="flex items-start gap-4 p-4 border-b border-gray-100 bg-gray-50 opacity-60 cursor-not-allowed">
+                              <div className="text-gray-400 mt-1 flex-shrink-0">
+                                {subItem.icon}
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-gray-500 text-sm mb-1 flex items-center gap-2">
+                                  {subItem.name}
+                                  <span className="text-xs bg-gray-200 px-2 py-1 rounded">Coming Soon</span>
+                                </h3>
+                                <p className="text-xs text-gray-400 leading-relaxed">
+                                  {subItem.description}
+                                </p>
+                              </div>
                             </div>
-                            <div className="flex-1">
-                              <h3 className="font-semibold text-gray-900 text-sm mb-1">
-                                {subItem.name}
-                              </h3>
-                              <p className="text-xs text-gray-600 leading-relaxed">
-                                {subItem.description}
-                              </p>
-                            </div>
-                          </Link>
+                          ) : (
+                            <Link
+                              to={subItem.path}
+                              className="flex items-start gap-4 p-4 border-b border-gray-100 hover:bg-gray-50"
+                              onClick={(e) => handleSubItemClick(subItem, e)}
+                            >
+                              <div className="text-blue-600 mt-1 flex-shrink-0">
+                                {subItem.icon}
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-gray-900 text-sm mb-1">
+                                  {subItem.name}
+                                </h3>
+                                <p className="text-xs text-gray-600 leading-relaxed">
+                                  {subItem.description}
+                                </p>
+                              </div>
+                            </Link>
+                          )}
                         </motion.div>
                       ))}
                   </div>
